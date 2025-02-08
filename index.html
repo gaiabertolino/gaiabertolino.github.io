@@ -1,7 +1,510 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Work experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#qualifications">Qualifications</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#links">My links</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Gaia A. Bertolino</h1>
+            <h2>Master's candidate in Computer Engineering, specializing in Artificial Intelligence and Machine Learning</h2>
+            <a href="resume.pdf" class="btn-rounded-white">Download Resume</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About Me</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Driven by curiosity and a passion for innovation, I am focused on harnessing the potential of AI to solve realworld challenges and improve quality of life. Currently completing my Master’s degree in Computer Engineering, specializing in AI and Machine Learning, and with a solid engineering foundation from my Bachelor's in Computer Engineering, I possess a transversal understanding of key AI fields such as machine learning, computer vision, natural language processing and data analysis, along with core engineering competencies in systems design, automation and control. In addition to my academic journey, I have gained valuable international experience, including an Erasmus traineeship in Luxembourg and a visiting research period for my master's thesis at the University of Cambridge (UK), which have deepened my understanding of cutting-edge technologies and provided me with exposure to diverse research methodologies. Beyond my studies, I am dedicated to volunteering, fostering cultural exchange and creating a positive social impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+            <div data-date="September 2024 – Current">
+                <h3>University of Calabria</h3>
+                <h4>Technical IT Staff </h4>
+                <p>
+                    Engaged in the IT and cloud systems sector, providing technical support and contributing to the maintenance and advancement of the university’s computing and telecommunications infrastructure and managing the automation of service provisioning. Advanced programming skills in: Perl, Powershell</p>
+            </div>
+
+            <div data-date="October 2021 – December 2021">
+                <h3>Cap4Lab</h3>
+                <h4>API Development Internship</h4>
+                <p>
+                    Developed a multi-layer API using Mulesoft services to optimize a billing management processes. I acquired handson experience in a dynamic and international corporate environment, collaborating within a team to engage with
+                    clients, manage project workflows and coordinate tasks efficiently. This experience further deepened my
+                    understanding of the developer’s role in a professional setting.
+                
+                    The traineeship contributed to my thesis research, enhancing my knowledge in API development and
+                    integration, and was fully funded through an Erasmus traineeship scholarship </p>
+            </div>
+
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>University of Cambridge</h3>
+            <span class="education-date">January 2025 - Current</span>
+            <h4>Thesis Research in Machine Learning for Advanced Clinical Consultations – University of Cambridge </h4>
+            <p>
+                Conducting in-person thesis research at the Department of Computer Science and Technology, University of
+                Cambridge, under the supervision of Prof. Cecilia Mascolo (Full Professor of Mobile Systems in the Department of
+                Computer Science and Technology of the University of Cambridge, Head of the Mobile Systems Research Laboratory
+                and Director of the Centre for Mobile, Wearable Systems and Augmented Intelligence) and Prof. Domenico Talia
+                (Full Professor in the Department of Computer, Modeling, Electronics, and Systems Engineering of the University of
+                Calabria and leader of the Scalable Computing and Cloud Laboratory).
+                
+                My research focuses on advancing machine learning models for the automation of clinical consultations and
+                auscultation. This includes exploring multimodal approaches for the representation and integration of text and
+                audio data, leveraging audio signals to extract novel insights, investigating explainable AI techniques to enhance
+                model transparency and interpretability and aiming to develop robust solutions capable of both training on and
+                effectively exploiting limited datasets            
+            
+                This research period is fully funded through an Erasmus MOST (Overseas) scholarship </p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>University of Calabria</h3>
+            <span class="education-date">2022 - Current</span>
+            <h4>BSc in Computer Engineering</h4>
+            <p> Thesis: API Development for IoT Applications using the Mulesoft Suite, Supervisor Prof. G. Fortino (Highly Cited
+                Researcher in Computer Science by Clarivate for five consecutive years)
+                Main exam modules: Object-Oriented Programming, Data Structures & Algorithms, Operating Systems, Robotics,
+                Automation, Telecommunications, Control Engineering, Digital Electronics, Design Patterns, Parallel Computing,
+                Database Systems, Linear Algebra, Phisics, Calcolus and Advanced Math.
+                Major projects undertaken:
+            </p>
+            <ul>
+                <li>
+                    VHDL-Based Design and Testing of a 16-Bit Carry Select Adder        
+                </li>
+                <li>
+                    Implementation and Verification of a Pipelined Adder-Subtractor in VHDL             
+                </li>
+                <li>
+                    Design and Simulation of Industrial Robotic Arms: Kinematics, Trajectory Planning and Control Implementation            
+                </li>
+                <li> 
+                    Path Planning and Control Strategies for Mobile Robotics: Development and Implementation
+                </li>
+                <li>
+                    Analysis and Design of Linear Control Systems: Transfer Functions, Stability and Frequency Response
+                </li>
+            </ul>
+            <p>
+                Awarded a full scholarship each year covering tuition, accommodation and a personal income.
+                Final grade: 106/110
+            </p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>University of Calabria</h3>
+            <span class="education-date">Sept 2016 - Sept 2017</span>
+            <h4>MSc in Computer engineering, specialization in Artificial Intelligence and Machine Learning</h4>
+            <p> Main exam modules: Cloud Computing, Artificial Intelligence, Computer Vision, Natural Language Processing,
+                Information Retrieval, Distributed Systems, Knowledge Representation, Machine and Deep Learning, Data
+                Mining, Social Network Analysis, Statistical Learning and Ethical and Legal Aspects of Computer Science.
+                Major projects undertaken:
+            </p>
+            <ul>
+                <li>
+                    Implementation of a Dynamic Graph Convolutional Neural Network for social network link prediction             
+                </li>
+                <li>
+                    Emergency Service Logistics Optimization using Agent-Based Planning                
+                </li>
+                <li>
+                    Bank fraud detection through anomaly detection techniques                
+                </li>
+                <li> 
+                    Power Cable and Tower Detection using Mask R-CNN 
+                </li>
+                <li>
+                    Improving RAG indexing through specialized embeddings
+                </li>
+                <li>
+                    Analysis of the effects of tipping prompting strategies on the GPT-o model 
+                </li>
+            </ul>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="qualifications">
+        <h2 class="heading">Qualifications</h2>
+        <div class="qualification-block">
+            <h3>National Qualification for the Profession of Junior Engineer</h3>
+            <span class="qualification-date">2023</span>
+            <h4>University of Calabria</h4>
+            <h5>Score: 56/60</h5>
+            <p>
+                Gained expertise in the role of an engineer, ethical principles and professional regulations. The qualification covered key topics such as licensing requirements, public procurement laws and workplace safety regulations. Since January 2024, I have been enrolled in the Provincial Order of Engineers of Catanzaro (Italy) where I am a member of the Young Engineers Committee, actively engaging in professional events and discussions, both as a participant and a speaker
+            </p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #qualifications -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/socialProject.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Implementation of a Dynamic Graph Convolutional Neural Network for social network link prediction</h3>
+                        <p>
+                            Trained a Dynamic Graph Convolutional Neural Network (DGCNN) for link prediction in Twitter user data
+                        </p>
+                        <a href="https://github.com/gaiabertolino/DGCNN">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Emergency Service Logistics Optimization using Agent-Based Planning</h3>
+                        <p>
+                            The project models a problem domain for a system based on autonomous agents to which classic planning, time planning and robotic planning are then applied. In particular, the scenario represents a problem of logistic organization in which a number of injured people must be reached by emergency services, which can transport various objects.
+                        </p>
+                        <a href="https://github.com/gaiabertolino/artificialIntelligenceProject">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Big Data Visualization Platform for U.S. Flight Data</h3>
+                        <p>
+                            Built a data visualization platform leveraging big data techniques to process and analyze a large dataset of U.S. air flights. Created an interactive interface, providing statistical insights and real-time visualizations for better decision-making and analysis.
+                        </p>
+                        <a href="https://github.com/gaiabertolino/bigData">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Frequent Itemset Mining with Dockerized Web Interface</h3>
+                        <p>
+                            Designed and developed a distributed system for executing frequent itemset mining algorithms on user-provided datasets. Implemented a web interface for easy data submission, and containerized the entire application using Docker for seamless deployment and scalability.
+                        </p>
+                        <a href="https://github.com/gaiabertolino/cloudComputingProject">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->   
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Bank Fraud Detection using Anomaly Detection Techniques</h3>
+                        <p>
+                            Applied various anomaly detection techniques, including statistical and machine learning methods, to analyze a banking transaction dataset and identify potential fraudulent activities.
+                        </p>
+                        <a href="https://github.com/gaiabertolino/dataMining">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+                 
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Power Cable and Tower Detection using Mask R-CNN</h3>
+                        <p>
+                            Fine-tuned a Mask R-CNN model to generate precise masks and bounding boxes for identifying power cables and towers in aerial imagery
+                        </p>
+                        <a href="https://github.com/gaiabertolino/computerVisionProject">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Improving RAG indexing through specialized embeddings</h3>
+                        <p>
+                            Analyzed the impact of optimized prompt strategies, specifically focusing on the improvements brought by tipping, on the performance of the GPT-omni model
+                        </p>
+                        <a href="https://github.com/gaiabertolino/RAGColBERT">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Short study on the impact of tipping on GPT-o model</h3>
+                        <p>
+                            Analyzed the impact of optimized prompt strategies, specifically focusing on the improvements brought by tipping, on the performance of the GPT-omni model
+                        </p>
+                        <a href="https://github.com/gaiabertolino/tippingGPTomni">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Implementation and Verification of a Pipelined Adder-Subtractor in VHDL</h3>
+                        <p>
+                            Creation of a pipeline circuit using VHDL
+                        </p>
+                        <a href="https://github.com/gaiabertolino/appunti/blob/e0571c682f588b6147e38bc18288747763bd2c2c/Relazione%20progetto%20pipeline.pdf">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>VHDL-Based Design and Testing of a 16-Bit Carry Select Adder</h3>
+                        <p>
+                            Implementation of a carry-select circuit using VHDL
+                        </p>
+                        <a href="https://github.com/gaiabertolino/carrySelect.VHDLProject">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Design and Simulation of Industrial Robotic Arms: Kinematics, Trajectory Planning and Control Implementation</h3>
+                        <p>
+                            Implementation of a robotics project
+                        </p>
+                        <a href="https://github.com/gaiabertolino/robotics/tree/main">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Path Planning and Control Strategies for Mobile Robotics: Development and Implementation</h3>
+                        <p>
+                            Implementation of a robotics project
+                        </p>
+                        <a href="https://github.com/gaiabertolino/robotics/tree/main">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Analysis and Design of Linear Control Systems: Transfer Functions, Stability and Frequency Response </h3>
+                        <p>
+                            The project entails the utilization of Maple and Matlab for the analysis of a linear and time-invariant continuous-time system. Furthermore, it involves designing and discussing the Bode plot for a transfer function and determining a simple-structure controller for a feedback control scheme.                        </p>
+                        <a href="hhttps://github.com/gaiabertolino/automationProject">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+                 
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>Prolog</li>
+            <li>Haskell</li>
+            <li>Docker</li>
+            <li>PyTorch</li>
+            <li>Plansys2</li>
+            <li>Pandas</li>
+            <li>Scikit-learn</li>
+            <li>Tensorflow</li>
+            <li>PDDL4j</li>
+            <li>Apache Spark</li>
+            <li>Streamlit</li>
+            <li>NetworkX</li>
+            <li>PyTorch Geometric</li>
+            <li>NLTK</li>
+            <li>Langchain</li>
+            <li>SQL</li>
+            <li>Assembly</li>
+            <li>XML</li>
+            <li>VHDL</li>
+            <li>Matlab</li>
+            <li>Maple</li>
+            <li>Perl</li>
+            <li>Powershell</li>
+            <li>Dataweave</li>
+            <li>RAML</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="links">
+        <h2>My link</h2>
+        <div class="col-sm-5 social">
+            <ul>
+                <li>
+                    <a href="https://github.com/gaiabertolino" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/gaia-assunta-bertolino/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- End #links -->
+    </div>
+    <!-- End #links -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; <span id="current-year">2022</span> Gaia A. Bertolino
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
 </body>
+
 </html>
