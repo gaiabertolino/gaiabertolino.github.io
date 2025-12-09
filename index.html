@@ -17,8 +17,58 @@
     body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial;transition:background .3s,color .3s}
     a{color:var(--link);text-decoration:none}a:hover{color:var(--link-hover);text-decoration:underline}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:var(--sidebar) 1fr;gap:28px;margin-top:78px}
-    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
+
+    /* Telefono molto piccolo */
+    @media (max-width: 600px) {
+      .wrap {
+        padding: 20px 14px;
+        margin-top: 70px;
+      }
+
+      .topbar .inner {
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        font-size: 1rem;
+      }
+
+      .avatar {
+        width: 96px;
+        height: 96px;
+      }
+
+      section {
+        padding: 16px;
+      }
+
+      /* News: niente testo troncato in una sola riga */
+      .news a {
+        white-space: normal;
+      }
+
+      .news time {
+        min-width: 70px;
+        font-size: 0.8rem;
+      }
+
+      /* Pill un po' più compatte */
+      .pill {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+      }
+    }
+
     aside{position:sticky;top:90px;align-self:start;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);text-align:center}
+    @media (max-width: 980px) {
+      aside {
+        position: static;
+        top: auto;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+
     .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--border);display:block;margin:0 auto 14px auto}
     .name{font-family:Merriweather,Georgia,serif;font-size:1.5rem;line-height:1.2;margin:0}
     .role{color:var(--muted);margin:.25rem 0 .75rem}
@@ -56,13 +106,30 @@
   </style>
 </head>
 <body id="top">
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="#top">Gaia A. Bertolino</a>
-      <nav class="topnav" id="topmenu"><a href="#about">About</a><a href="#news">News</a><a href="#research">Research</a><a href="#teaching">Teaching</a><a href="#education">Education</a><a href="#studProjects">Student projects</a><!--<a href="#talks">Talks</a><a href="#service">Service</a>--></nav>
-      <button class="theme-toggle" id="themeToggle" title="Cambia tema">☾</button>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="#top">Gaia A. Bertolino</a>
+
+    <!-- Bottone hamburger per mobile -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Apri o chiudi il menu">
+      ☰
+    </button>
+
+    <nav class="topnav" id="topmenu">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#research">Research</a>
+      <a href="#pubs">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#talks">Talks</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" title="Cambia tema">☾</button>
+  </div>
+</header>
+
   <div class="wrap">
     <aside>
       <img class="avatar" src="assets/img/photo.jpg" alt="ritratto di Gaia A. Bertolino" />
@@ -79,8 +146,7 @@
       height: 16px;">
         LinkedIn
       </a>
-      <a class="pill" href="https://github.com/gab62-cam">💻 Github - Cambridge</a>
-      <a class="pill" href="https://github.com/gaiabertolino">💻 Github - Personal</a>
+      <a class="pill" href="https://github.com/gab62-cam">💻 Github</a>
       <a class="pill" href="cv.pdf">📎 Download CV</a>
       <!-- <a class="pill" href="https://scholar.google.com/citations?user=XXXXX">Google Scholar</a> 
           <a class="pill" href="https://orcid.org/0000-0000-0000-0000">ORCID</a></div> -->
@@ -94,6 +160,7 @@
       </div>
           
     </aside>
+    
     <main>
       <section id="about"><h2>About</h2>
         <p>
@@ -131,10 +198,11 @@
             <li><time datetime="2025-03-18">2025-03-18</time> <a href="#">Poster presentato @ ABC Workshop</a></li>
             <li><time datetime="2024-12-02">2024-12-02</time> <a href="#">Paper revisionato e resubmitted</a></li>
             <li><time datetime="2024-10-11">2024-10-11</time> <a href="#">Nuovo dataset pubblico per Project B</a></li>
-            <li><time datetime="2024-07-28">2024-07-28</time> <a href="#">Talk al Reading Group</a></li>
-            <li><time datetime="2024-06-30">2024-06-30</time> <a href="#">Visiting presso FooLab</a></li>
-            -->
-            <li><time datetime="10-2025">14-10-2025</time> <a href="https://ant-dn.eu">Upcoming: ANT Doctoral Network Kickoff in Delft, 27–30 October 2025</a></li>
+            <li><time datetime="2024-07-28">2024-07-28</time> <a href="#">Talk al Reading Group</a></li> -->
+            <li><time datetime="10-2025">2024-06-30</time> <a href="#">Selected among the 30 participants out of 170 applicants for the Women Shape the Future female entrepreneurship program</a></li> 
+            <li><time datetime="10-2025">October 2025</time> <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_startcupcalabria-activity-7397588558083092480-Z0qI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Our startup on smart eyewear wins IP prize at StartCup 2025!</a></li>
+            <li><time datetime="10-2025">October 2025</time> <a href="https://www.hughes.cam.ac.uk/about/news/nurturing-our-future-leaders/">Selected among 10 Hughes Hall students for Impactful Leadership Programme</a></li>
+            <li><time datetime="10-2025">October 2025</time> <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">ANT Doctoral Network Kickoff in Delft, 27–30 October 2025</a></li>
 
           </ul>
           <!-- 
@@ -307,6 +375,24 @@
     const saved=localStorage.getItem('theme');
     if(saved){root.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☾':'☼';}
 
+    // --- MENU MOBILE ---
+  const menuToggle = document.getElementById('menuToggle');
+  const topmenu = document.getElementById('topmenu');
+
+  menuToggle.addEventListener('click', () => {
+    topmenu.classList.toggle('open');
+  });
+
+  // chiudi il menu quando clicchi un link su mobile
+  topmenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 860) {
+        topmenu.classList.remove('open');
+      }
+    });
+  });
+
+
     // News: show 3 at a time, scroll with arrows
     const list=document.getElementById('newsList');
     const up=document.getElementById('scrollUp');
@@ -317,6 +403,7 @@
     function render(){
       items.forEach((li,i)=>{ li.style.display = (i>=startIndex && i<startIndex+visible) ? 'flex' : 'none'; });
     }
+    
     function scroll(dir){
       const max=items.length-visible;
       startIndex=Math.min(Math.max(0,startIndex+dir),max);
@@ -328,3 +415,4 @@
   </script>
 </body>
 </html>
+
