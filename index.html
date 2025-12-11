@@ -6,560 +6,276 @@
   <title>Gaia A. Bertolino — RA & PhD — University of Cambridge</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* ---------- Tokens ---------- */
     :root {
       --bg-light:#ffffff; --text-light:#14151a; --muted-light:#616678; --card-light:#f7f8fa; --border-light:#e6e7ee;
       --bg-dark:#0f1115; --text-dark:#e7e8ec; --muted-dark:#a6a9b4; --card-dark:#161922; --border-dark:#242838;
       --link:#0b6fa4; --link-hover:#084f76; --radius:14px; --maxw:1180px; --sidebar:300px; --shadow:0 10px 24px rgba(0,0,0,.08)
     }
-    [data-theme="light"]{
-      --bg:var(--bg-light);
-      --text:var(--text-light);
-      --muted:var(--muted-light);
-      --card:var(--card-light);
-      --border:var(--border-light)
-    }
-    [data-theme="dark"]{
-      --bg:var(--bg-dark);
-      --text:var(--text-dark);
-      --muted:var(--muted-dark);
-      --card:var(--card-dark);
-      --border:var(--border-dark)
-    }
+    [data-theme="light"]{--bg:var(--bg-light);--text:var(--text-light);--muted:var(--muted-light);--card:var(--card-light);--border:var(--border-light)}
+    [data-theme="dark"]{--bg:var(--bg-dark);--text:var(--text-dark);--muted:var(--muted-dark);--card:var(--card-dark);--border:var(--border-dark)}
 
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial;
-      transition:background .3s,color .3s
-    }
+    /* ---------- Base ---------- */
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial;transition:background .3s,color .3s}
     a{color:var(--link);text-decoration:none}
     a:hover{color:var(--link-hover);text-decoration:underline}
+    img{max-width:100%;display:block}
 
-    .wrap{
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:32px 20px;
-      display:grid;
-      grid-template-columns:var(--sidebar) 1fr;
-      gap:28px;
-      margin-top:78px;
-    }
+    /* ---------- Layout ---------- */
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab,var(--bg) 85%,transparent);border-bottom:1px solid var(--border)}
+    .topbar .inner{max-width:var(--maxw);margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:600;letter-spacing:.01em;color:var(--text)}
 
-    /* Telefono molto piccolo */
-    @media (max-width: 600px) {
-      .wrap {
-        padding: 20px 14px;
-        margin-top: 70px;
-      }
-
-      .topbar .inner {
-        flex-wrap: wrap;
-      }
-
-      .brand {
-        font-size: 1rem;
-      }
-
-      .avatar {
-        width: 96px;
-        height: 96px;
-      }
-
-      section {
-        padding: 16px;
-      }
-
-      /* News: niente testo troncato in una sola riga */
-      .news a {
-        white-space: normal;
-      }
-
-      .news time {
-        min-width: 70px;
-        font-size: 0.8rem;
-      }
-
-      /* Pill un po' più compatte */
-      .pill {
-        padding: 8px 10px;
-        font-size: 0.9rem;
-      }
-    }
-
-    /* Sotto gli 860px: una colonna sola (aside sopra, contenuto sotto) */
-    @media (max-width: 860px) {
-      .wrap {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-    }
-
-    aside{
-      position:sticky;
-      top:90px;              /* distanziato sotto la topbar */
-      align-self:start;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow);
-      text-align:center;
-    }
-
-    /* Su mobile/tablet medio: niente sticky, box normale sopra il contenuto */
-    @media (max-width: 980px) {
-      aside {
-        position: static;
-        top: auto;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-    }
-
-    .avatar{
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      object-fit:cover;
-      border:4px solid var(--border);
-      display:block;
-      margin:0 auto 14px auto
-    }
-    .name{
-      font-family:Merriweather,Georgia,serif;
-      font-size:1.5rem;
-      line-height:1.2;
-      margin:0
-    }
-    .role{color:var(--muted);margin:.25rem 0 .75rem}
-    .side-links{display:grid;gap:8px;margin:14px 0;text-align:left}
-    .pill{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      background:color-mix(in oklab,var(--card) 94%,var(--bg));
-      border:1px solid var(--border);
-      border-radius:999px
-    }
-    .contact{margin-top:10px;font-size:.95rem;text-align:left}
-    main{display:grid;gap:24px}
-    section{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow)
-    }
-    h2{
-      font-family:Merriweather,Georgia,serif;
-      font-size:1.35rem;
-      margin:0 0 12px
-    }
-    .muted{color:var(--muted)}
-    .list{display:grid;gap:14px}
-    .item{
-      padding:14px;
-      border:1px solid var(--border);
-      border-radius:12px;
-      background:color-mix(in oklab,var(--card) 92%,var(--bg))
-    }
-
-    /* News list */
-    .news{position:relative}
-    .news ul{list-style:none;margin:0;padding:0}
-    .news li{
-      display:flex;
-      align-items:baseline;
-      gap:10px;
-      padding:12px 0;
-      border-bottom:1px dashed var(--border)
-    }
-    .news time{
-      font-variant-numeric:tabular-nums;
-      font-size:.9rem;
-      color:var(--muted);
-      min-width:90px
-    }
-    .news a{
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap
-    }
-
-    html{scroll-behavior:smooth}
-    section{scroll-margin-top:90px}
-
-    .topbar{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:100;
-      backdrop-filter:saturate(180%) blur(10px);
-      background:color-mix(in oklab,var(--bg) 85%,transparent);
-      border-bottom:1px solid var(--border)
-    }
-    .topbar .inner{
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:10px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px
-    }
+    .menu-toggle{display:none;border:1px solid var(--border);background:var(--card);border-radius:999px;padding:8px 12px;font-size:1rem;cursor:pointer}
     .topnav{display:flex;gap:14px;flex-wrap:wrap}
     .topnav a{font-size:.95rem}
     .topnav a.active{font-weight:600;text-decoration:underline}
-    .menu-toggle{
-      display:none;
-      border:1px solid var(--border);
-      background:var(--card);
-      border-radius:999px;
-      padding:8px 12px
+
+    .theme-toggle{border:none;background:transparent;font-size:1.3rem;cursor:pointer;color:var(--text);transition:transform .2s}
+    .theme-toggle:hover{transform:scale(1.1)}
+
+    .page{max-width:var(--maxw);margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:var(--sidebar) 1fr;gap:28px;margin-top:78px}
+    .profile{position:sticky;top:90px;align-self:start;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);text-align:center}
+    .content-shell{background:color-mix(in oklab,var(--card) 92%,var(--bg));border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);width:100%;max-width:min(92vw,840px);justify-self:start}
+    main{display:grid;gap:24px;width:100%;max-width:min(90vw,820px);margin:0 auto}
+
+    /* ---------- Cards ---------- */
+    section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);scroll-margin-top:90px;width:100%;max-width:min(88vw,780px);margin:0 auto}
+    h2{font-family:Merriweather,Georgia,serif;font-size:1.35rem;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .list{display:grid;gap:14px}
+    .item{padding:14px;border:1px solid var(--border);border-radius:12px;background:color-mix(in oklab,var(--card) 92%,var(--bg))}
+
+    /* ---------- Sidebar ---------- */
+    .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--border);margin:0 auto 14px}
+    .name{font-family:Merriweather,Georgia,serif;font-size:1.5rem;line-height:1.2;margin:0}
+    .role{color:var(--muted);margin:.25rem 0 .75rem}
+    .side-links{display:grid;gap:8px;margin:14px 0;text-align:left}
+    .pill{display:flex;align-items:center;gap:10px;padding:10px 12px;background:color-mix(in oklab,var(--card) 94%,var(--bg));border:1px solid var(--border);border-radius:999px}
+
+    /* ---------- News ---------- */
+    .news{position:relative}
+    .news ul{list-style:none;margin:0;padding:0}
+    .news li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dashed var(--border)}
+    .news time{font-variant-numeric:tabular-nums;font-size:.9rem;color:var(--muted);min-width:110px;width:110px;text-align:left;white-space:nowrap;flex-shrink:0;padding-top:0}
+    .news a{display:block;overflow:visible;text-overflow:unset;white-space:normal;line-height:1.45}
+
+    /* ---------- Responsive ---------- */
+    @media(max-width:980px){
+      .page{grid-template-columns:1fr;gap:20px}
+      .profile{position:sticky;top:72px;z-index:60}
+      .content-shell{padding:18px}
     }
     @media(max-width:860px){
-      .menu-toggle{
-        display:inline-flex;
-        align-items:center;
-        gap:8px
-      }
-      .topnav{
-        display:none;
-        position:absolute;
-        left:0;
-        right:0;
-        top:54px;
-        padding:12px 20px;
-        background:color-mix(in oklab,var(--bg) 92%,transparent);
-        border-bottom:1px solid var(--border)
-      }
-      .topnav.open{
-        display:flex;
-        flex-wrap:wrap
-      }
+      .menu-toggle{display:inline-flex;align-items:center;gap:8px}
+      .topnav{display:none;position:absolute;left:0;right:0;top:54px;padding:12px 20px;background:color-mix(in oklab,var(--bg) 92%,transparent);border-bottom:1px solid var(--border)}
+      .topnav.open{display:flex;flex-wrap:wrap}
+      .profile{position:static;top:auto;z-index:auto}
+    }
+    @media(max-width:600px){
+      .page{padding:20px 14px;margin-top:70px}
+      .avatar{width:96px;height:96px}
+      section{padding:16px}
+      .pill{padding:8px 10px;font-size:.9rem}
+      .news a{white-space:normal}
+      .news time{min-width:70px;font-size:.8rem}
     }
 
-    .theme-toggle{
-      border:none;
-      background:transparent;
-      font-size:1.3rem;
-      cursor:pointer;
-      color:var(--text);
-      transition:transform .2s
-    }
-    .theme-toggle:hover{transform:scale(1.1)}
+    html{scroll-behavior:smooth}
   </style>
 </head>
 <body id="top">
-<header class="topbar">
-  <div class="inner">
-    <a class="brand" href="#top">Gaia A. Bertolino</a>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="#top">Gaia A. Bertolino</a>
 
-    <!-- Bottone hamburger per mobile -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Apri o chiudi il menu">
-      ☰
-    </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri o chiudi il menu">☰</button>
 
-    <nav class="topnav" id="topmenu">
-      <a href="#about">About</a>
-      <a href="#news">News</a>
-      <a href="#research">Research</a>
-      <a href="#pubs">Publications</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#talks">Talks</a>
-      <a href="#service">Service</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <nav class="topnav" id="topmenu">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#research">Research</a>
+        <a href="#pubs">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#talks">Talks</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <button class="theme-toggle" id="themeToggle" title="Cambia tema">☾</button>
-  </div>
-</header>
+      <button class="theme-toggle" id="themeToggle" title="Cambia tema">☾</button>
+    </div>
+  </header>
 
-  <div class="wrap">
-    <aside>
+  <div class="page">
+    <aside class="profile">
       <img class="avatar" src="assets/img/photo.jpg" alt="ritratto di Gaia A. Bertolino" />
       <h1 class="name">Gaia A. Bertolino</h1>
-      <p class="role" style="margin-top: 10px;">
-        Research Assistant <br> &amp; PhD Student<br>
-        <strong>University of Cambridge</strong>
-      </p>
-      <p style="font-size:0.60rem; color:var(--muted); margin-top:8px;">
-        Department of Computer Science and Technology<br>
-        University of Cambridge
-      </p>
+      <p class="role" style="margin-top:10px;">Research Assistant <br> &amp; PhD Student<br><strong>University of Cambridge</strong></p>
+      <p style="font-size:0.60rem;color:var(--muted);margin-top:8px;">Department of Computer Science and Technology<br>University of Cambridge</p>
 
-      <div class="side-links" style="margin-top: 30px;">
+      <div class="side-links" style="margin-top:30px;">
         <a class="pill" href="https://www.linkedin.com/in/gaia-assunta-bertolino">
-          <img src="assets/img/linkedin-logo.png" alt="LinkedIn" class="icon" style="width: 16px;height: 16px;">
-          LinkedIn
+          <img src="assets/img/linkedin-logo.png" alt="LinkedIn" class="icon" style="width:16px;height:16px;">LinkedIn
         </a>
         <a class="pill" href="https://github.com/gab62-cam">💻 Github</a>
         <a class="pill" href="cv.pdf">📎 Download CV</a>
         <a class="pill" href="mailto:gab62@cam.ac.uk">📧 Email</a>
-
       </div>
+    </aside>
 
-      <!-- <div style="height:15px;"></div>
+    <div class="content-shell">
+      <main>
+        <section id="about">
+          <h2>About</h2>
+          <p>I am a <strong>Marie Skłodowska-Curie</strong> doctoral researcher (<abbr title="Doctor of Philosophy">PhD</abbr>) at the <strong>University of Cambridge</strong>, working on uncertainty-aware and resource-efficient machine learning for on-device health monitoring. My research integrates uncertainty quantification, continual learning, and embedded AI to enable trustworthy and adaptive systems deployable on constrained hardware.</p>
+          <p>Driven by curiosity and a commitment to innovation, I aim to harness <strong>AI</strong> to address practical challenges and improve quality of life. My path, from a BSc and MSc in Computer Engineering (AI/ML) at the <strong>University of Calabria</strong> to international research and industry experiences in <strong>Luxembourg</strong> and <strong>Cambridge</strong>, has shaped a multidisciplinary and collaborative approach to scientific inquiry.</p>
+        </section>
 
-      <div class="contact" style="text-align:center;">
-        <div>
-          <a href="">gab62@cam.ac.uk</a>
-        </div>
-      </div>
-    </aside> -->
-    
-    <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>
-          I am a <strong>Marie Skłodowska-Curie</strong> doctoral researcher (<abbr title="Doctor of Philosophy">PhD</abbr>) at the
-          <strong>University of Cambridge</strong>, working on uncertainty-aware and
-          resource-efficient machine learning for on-device health monitoring.
-          My research integrates uncertainty quantification, continual learning,
-          and embedded AI to enable trustworthy and adaptive systems deployable on constrained hardware.
-        </p>
+        <section id="news" class="news" aria-labelledby="news-h">
+          <header>
+            <h2 id="news-h">News &amp; Updates</h2>
+          </header>
+          <ul id="newsList">
+            <li>
+              <time datetime="2025-10-01">December 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_women-future-water-activity-7403888194385256448-NP7u">Presenting AquaLink Sud smart water solution at Women Shape the Future at the University of Calabria, 10-11 December 2025</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">October 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_women-future-water-activity-7403888194385256448-NP7u">Selected among the 30 participants out of 170 applicants for the Women Shape the Future female entrepreneurship program</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">October 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_startcupcalabria-activity-7397588558083092480-Z0qI">Our startup on smart eyewear wins IP prize at StartCup 2025!</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">October 2025</time>
+              <a href="https://www.hughes.cam.ac.uk/about/news/nurturing-our-future-leaders/">Selected among 10 Hughes Hall students for Impactful Leadership Programme</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">October 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">ANT Doctoral Network Kickoff in Delft, 27–30 October 2025</a>
+            </li>
+          </ul>
+        </section>
 
-        <p>
-          Driven by curiosity and a commitment to innovation, I aim to harness <strong>AI</strong> to address practical
-          challenges and improve quality of life. My path, from a BSc and MSc in Computer Engineering
-          (AI/ML) at the <strong>University of Calabria</strong> to international research and industry experiences in
-          <strong>Luxembourg</strong> and <strong>Cambridge</strong>, has shaped a multidisciplinary and collaborative approach
-          to scientific inquiry.
-        </p>
-        <div style="height:20px;"></div>
-      </section>
-
-      <!-- NEWS / UPDATES -->
-      <section id="news" class="news" aria-labelledby="news-h">
-        <header>
-          <h2 id="news-h">News &amp; Updates</h2>
-        </header>
-        <ul id="newsList">
-          <li>
-            <time datetime="2025-12-10">December 2025</time>
-            <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_women-future-water-activity-7403888194385256448-NP7u">
-              Presenting AquaLink Sud smart water solution at Women Shape the Future at the University of Calabria, 10-11 December 2025
-            </a>
-          </li>
-          <li>
-            <time datetime="2025-10-01">October 2025</time>
-            <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_women-future-water-activity-7403888194385256448-NP7u">
-              Selected among the 30 participants out of 170 applicants for the Women Shape the Future female entrepreneurship program
-            </a>
-          </li>
-          <li>
-            <time datetime="2025-10-01">October 2025</time>
-            <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_startcupcalabria-activity-7397588558083092480-Z0qI">
-              Our startup on smart eyewear wins IP prize at StartCup 2025!
-            </a>
-          </li>
-          <li>
-            <time datetime="2025-10-01">October 2025</time>
-            <a href="https://www.hughes.cam.ac.uk/about/news/nurturing-our-future-leaders/">
-              Selected among 10 Hughes Hall students for Impactful Leadership Programme
-            </a>
-          </li>
-          <li>
-            <time datetime="2025-10-01">October 2025</time>
-            <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">
-              ANT Doctoral Network Kickoff in Delft, 27–30 October 2025
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <div style="height:32px;"></div>
-
-      <section id="research" aria-labelledby="res-h">
-        <h2 id="res-h">Research</h2>
-        <div class="list">
-          <div class="item">
-            <h3>Master’s Thesis Research — RA-QA (Cambridge, 2025)</h3>
-            <p class="muted" style="font-size:0.95rem; margin:2px 0 10px 0;">
-              <em>Visiting student, University of Cambridge</em>
-            </p>
-            <p>
-              Developed <strong>RA-QA</strong>: the first multimodal benchmark and generative framework for respiratory audio question answering, bridging AI, health, and language understanding.
-            </p>
-            <p>
-              <a href="https://github.com/gaiabertolino/resp-qa">Code</a>
-            </p>
-            <div class="tags" style="margin-top:6px;">
-              <span class="tag">Respiratory audio</span>
-              <span class="tag">Healthcare</span>
-              <span class="tag">Multimodality</span>
-              <span class="tag">LLMs</span>
+        <section id="research" aria-labelledby="res-h">
+          <h2 id="res-h">Research</h2>
+          <div class="list">
+            <div class="item">
+              <h3>Master’s Thesis Research — RA-QA (Cambridge, 2025)</h3>
+              <p class="muted" style="font-size:0.95rem;margin:2px 0 10px 0;"><em>Visiting student, University of Cambridge</em></p>
+              <p>Developed <strong>RA-QA</strong>: the first multimodal benchmark and generative framework for respiratory audio question answering, bridging AI, health, and language understanding.</p>
+              <p><a href="https://github.com/gaiabertolino/resp-qa">Code</a></p>
+              <div class="tags" style="margin-top:6px;">
+                <span class="tag">Respiratory audio</span>
+                <span class="tag">Healthcare</span>
+                <span class="tag">Multimodality</span>
+                <span class="tag">LLMs</span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <div style="height:32px;"></div>
-
-      <section id="teaching" aria-labelledby="teach-h">
-        <h2 id="teach-h">Teaching</h2>
-        <div class="list">
-          <div class="item">
-            <h3>Machine Learning &amp; Real World Data</h3>
-            <p class="muted">
-              Supervisor — <a href="https://www.cl.cam.ac.uk/teaching/2526/MLRD/">Syllabus</a>
-            </p>
-            <p class="muted" style="margin-top:4px;">Lent Term 2026</p>
+        <section id="teaching" aria-labelledby="teach-h">
+          <h2 id="teach-h">Teaching</h2>
+          <div class="list">
+            <div class="item">
+              <h3>Machine Learning &amp; Real World Data</h3>
+              <p class="muted">Supervisor — <a href="https://www.cl.cam.ac.uk/teaching/2526/MLRD/">Syllabus</a></p>
+              <p class="muted" style="margin-top:4px;">Lent Term 2026</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <div style="height:32px;"></div>
-
-      <section id="education" aria-labelledby="edu-h">
-        <h2 id="edu-h">Education</h2>
-        <div class="list">
-          <div class="item">
-            <h3>PhD in Computer Science</h3>
-            <p class="muted">University of Cambridge, UK</p>
-            <p class="muted" style="margin-top:4px;">2025–2029 (expected)</p>
-            <p>
-              Research on uncertainty-aware and resource-efficient machine learning for on-device health monitoring, integrating uncertainty quantification, continual learning, and embedded AI to enable trustworthy and adaptive systems deployable on constrained hardware.
-            </p>  
+        <section id="education" aria-labelledby="edu-h">
+          <h2 id="edu-h">Education</h2>
+          <div class="list">
+            <div class="item">
+              <h3>PhD in Computer Science</h3>
+              <p class="muted">University of Cambridge, UK</p>
+              <p class="muted" style="margin-top:4px;">2025–2029 (expected)</p>
+              <p>Research on uncertainty-aware and resource-efficient machine learning for on-device health monitoring, integrating uncertainty quantification, continual learning, and embedded AI to enable trustworthy and adaptive systems deployable on constrained hardware.</p>
+            </div>
+            <div class="item">
+              <h3>Master’s Degree in Computer Engineering (AI/ML)</h3>
+              <p class="muted">University of Calabria, Italy</p>
+              <p class="muted" style="margin-top:4px;">2022 – July 2025</p>
+              <p>MSc specialization in Artificial Intelligence and Machine Learning.<br>Final grade: 105/110</p>
+              <p>Thesis research conducted in-person at the Department of Computer Science and Technology, University of Cambridge, under the supervision of <b>Prof. Cecilia Mascolo</b> and <b>Prof. Domenico Talia</b>.</p>
+              <p>The dissertation focused on advancing machine learning models for the automation of clinical consultations and auscultation, exploring multimodal approaches, audio-based insights, and explainable AI techniques.</p>
+              <p>Major projects:
+                <ul>
+                  <li>Dynamic Graph Convolutional Neural Network for social network link prediction</li>
+                  <li>Emergency Service Logistics Optimization using Agent-Based Planning</li>
+                  <li>Bank fraud detection through anomaly detection techniques</li>
+                  <li>Power Cable and Tower Detection using Mask R-CNN</li>
+                  <li>Improving RAG indexing through specialized embeddings</li>
+                  <li>Analysis of tipping prompting strategies on GPT-o</li>
+                </ul>
+              </p>
+            </div>
+            <div class="item">
+              <h3>Bachelor’s Degree in Computer Engineering</h3>
+              <p class="muted">University of Calabria, Italy</p>
+              <p class="muted" style="margin-top:4px;">2019–2022</p>
+              <p>Final grade: 106/110<br>Thesis: API Development for IoT Applications using the Mulesoft Suite, Supervisor Prof. G. Fortino.</p>
+              <p>Major projects:
+                <ul>
+                  <li>VHDL-Based Design and Testing of a 16-Bit Carry Select Adder</li>
+                  <li>Pipelined Adder-Subtractor in VHDL</li>
+                  <li>Industrial Robotic Arms: Kinematics, Trajectory Planning, Control Implementation</li>
+                  <li>Mobile Robotics: Path Planning and Control Strategies</li>
+                  <li>Linear Control Systems: Transfer Functions, Stability, Frequency Response</li>
+                </ul>
+              </p>
+            </div>
           </div>
-        
-          <div class="item">
-            <h3>Master’s Degree in Computer Engineering (AI/ML)</h3>
-            <p class="muted">University of Calabria, Italy</p>
-            <p class="muted" style="margin-top:4px;">2022 – July 2025</p>
-            <p>
-              MSc specialization in Artificial Intelligence and Machine Learning.<br>
-              Final grade: 105/110
-            </p>
-            <p>
-              Thesis research conducted in-person at the Department of Computer Science and Technology, University of Cambridge, under the supervision of <b>Prof. Cecilia Mascolo</b> and <b>Prof. Domenico Talia</b>.
-            </p>
-            <p>
-              The dissertation focused on advancing machine learning models for the automation of clinical consultations and auscultation, exploring multimodal approaches, audio-based insights, and explainable AI techniques.
-            </p>
-            <p>
-              Major projects:
-              <ul>
-                <li>Dynamic Graph Convolutional Neural Network for social network link prediction</li>
-                <li>Emergency Service Logistics Optimization using Agent-Based Planning</li>
-                <li>Bank fraud detection through anomaly detection techniques</li>
-                <li>Power Cable and Tower Detection using Mask R-CNN</li>
-                <li>Improving RAG indexing through specialized embeddings</li>
-                <li>Analysis of tipping prompting strategies on GPT-o</li>
-              </ul>
-            </p>
+        </section>
+
+        <section id="previousProjects" aria-labelledby="proj-1">
+          <h2 id="studProjects">Student projects</h2>
+          <div class="list">
+            <div class="item"><a href="https://github.com/gaiabertolino/DGCNN">DGCNN for Link Prediction on Social Networks (Twitter)</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/artificialIntelligenceProject">Agent-based Logistics Optimization for Emergency Services</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/bigData">Big Data Visualization Platform for US Flight Data</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/cloudComputingProject">Frequent Itemset Mining with Containerized Web Interface (Docker)</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/dataMining">Bank Fraud Detection using Anomaly Detection Techniques</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/computerVisionProject">Power Cable and Tower Detection using Mask R-CNN</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/RAGColBERT">Improving RAG Indexing with Specialized Embeddings</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/tippingGPTomni">Study on the Impact of "Tipping" for Optimized Prompts on GPT-omni</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/appunti/blob/e0571c682f588b6147e38bc18288747763bd2c2c/Relazione%20progetto%20pipeline.pdf">Pipelined Adder-Subtractor in VHDL — Implementation and Verification</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/carrySelect.VHDLProject">16-bit Carry Select Adder in VHDL — Design and Testing</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/robotics/tree/main">Design and Simulation of Industrial Robotic Arms (Kinematics and Control)</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/robotics/tree/main">Path Planning and Control Strategies for Mobile Robots</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/automationProject">Analysis and Design of Linear Control Systems (Bode, Stability)</a></div>
           </div>
-
-          <div class="item">
-            <h3>Bachelor’s Degree in Computer Engineering</h3>
-            <p class="muted">University of Calabria, Italy</p>
-            <p class="muted" style="margin-top:4px;">2019–2022</p>
-            <p>
-              Final grade: 106/110<br>
-              Thesis: API Development for IoT Applications using the Mulesoft Suite, Supervisor Prof. G. Fortino.
-            </p>
-            <p>
-              Major projects:
-              <ul>
-                <li>VHDL-Based Design and Testing of a 16-Bit Carry Select Adder</li>
-                <li>Pipelined Adder-Subtractor in VHDL</li>
-                <li>Industrial Robotic Arms: Kinematics, Trajectory Planning, Control Implementation</li>
-                <li>Mobile Robotics: Path Planning and Control Strategies</li>
-                <li>Linear Control Systems: Transfer Functions, Stability, Frequency Response</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div style="height:32px;"></div>
-
-      <section id="previousProjects" aria-labelledby="proj-1">
-        <h2 id="studProjects">Student projects</h2>
-        <div class="list">
-          <div class="item"><a href="https://github.com/gaiabertolino/DGCNN">DGCNN for Link Prediction on Social Networks (Twitter)</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/artificialIntelligenceProject">Agent-based Logistics Optimization for Emergency Services</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/bigData">Big Data Visualization Platform for US Flight Data</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/cloudComputingProject">Frequent Itemset Mining with Containerized Web Interface (Docker)</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/dataMining">Bank Fraud Detection using Anomaly Detection Techniques</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/computerVisionProject">Power Cable and Tower Detection using Mask R-CNN</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/RAGColBERT">Improving RAG Indexing with Specialized Embeddings</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/tippingGPTomni">Study on the Impact of "Tipping" for Optimized Prompts on GPT-omni</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/appunti/blob/e0571c682f588b6147e38bc18288747763bd2c2c/Relazione%20progetto%20pipeline.pdf">Pipelined Adder-Subtractor in VHDL — Implementation and Verification</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/carrySelect.VHDLProject">16-bit Carry Select Adder in VHDL — Design and Testing</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/robotics/tree/main">Design and Simulation of Industrial Robotic Arms (Kinematics and Control)</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/robotics/tree/main">Path Planning and Control Strategies for Mobile Robots</a></div>
-          <div class="item"><a href="https://github.com/gaiabertolino/automationProject">Analysis and Design of Linear Control Systems (Bode, Stability)</a></div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
   </div>
 
-  <div style="text-align:center; margin:32px 0;">
+  <div style="text-align:center;margin:32px 0;">
     <p class="muted">© <span id="year"></span> Gaia A. Bertolino — Last update: October 2025</p>
   </div>
 
   <script>
+    // Year stamp
     document.getElementById('year').textContent=new Date().getFullYear();
 
-    // toggle theme
+    // Theme toggle
     const root=document.documentElement;
     const themeBtn=document.getElementById('themeToggle');
-    themeBtn.addEventListener('click',()=>{
-      const current=root.getAttribute('data-theme');
-      const next=current==='dark'?'light':'dark';
-      root.setAttribute('data-theme',next);
-      themeBtn.textContent=next==='dark'?'☾':'☼';
-      localStorage.setItem('theme',next);
-    });
     const saved=localStorage.getItem('theme');
-    if(saved){
-      root.setAttribute('data-theme',saved);
-      themeBtn.textContent=saved==='dark'?'☾':'☼';
-    }
+    if(saved){root.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☾':'☼';}
+    themeBtn.addEventListener('click',()=>{const current=root.getAttribute('data-theme');const next=current==='dark'?'light':'dark';root.setAttribute('data-theme',next);themeBtn.textContent=next==='dark'?'☾':'☼';localStorage.setItem('theme',next);});
 
-    // --- MENU MOBILE ---
-    const menuToggle = document.getElementById('menuToggle');
-    const topmenu = document.getElementById('topmenu');
-
-    menuToggle.addEventListener('click', () => {
-      topmenu.classList.toggle('open');
-    });
-
-    // chiudi il menu quando clicchi un link su mobile
-    topmenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 860) {
-          topmenu.classList.remove('open');
-        }
-      });
-    });
-
-    // News: show 3 at a time, scroll with arrows (se riattivi i bottoni)
-    const list=document.getElementById('newsList');
-    const up=document.getElementById('scrollUp');
-    const down=document.getElementById('scrollDown');
-    if (list && up && down) {
-      let startIndex=0;
-      const items=list.querySelectorAll('li');
-      const visible=3;
-      function render(){
-        items.forEach((li,i)=>{
-          li.style.display = (i>=startIndex && i<startIndex+visible) ? 'flex' : 'none';
-        });
-      }
-      function scroll(dir){
-        const max=items.length-visible;
-        startIndex=Math.min(Math.max(0,startIndex+dir),max);
-        render();
-      }
-      up.addEventListener('click',()=>scroll(-1));
-      down.addEventListener('click',()=>scroll(1));
-      render();
-    }
+    // Mobile menu
+    const menuToggle=document.getElementById('menuToggle');
+    const topmenu=document.getElementById('topmenu');
+    menuToggle.addEventListener('click',()=>{topmenu.classList.toggle('open');});
+    topmenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{if(window.innerWidth<=860){topmenu.classList.remove('open');}});});
   </script>
 </body>
 </html>
