@@ -60,11 +60,15 @@
     .news li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dashed var(--border)}
     .news time{font-variant-numeric:tabular-nums;font-size:.9rem;color:var(--muted);min-width:110px;width:110px;text-align:left;white-space:nowrap;flex-shrink:0;padding-top:0}
     .news a{display:block;overflow:visible;text-overflow:unset;white-space:normal;line-height:1.45}
+    .news a:not([href]), .news a[href=""]{color:var(--text);text-decoration:none;pointer-events:none;cursor:default}
+    .news a:not([href]):hover, .news a[href=""]:hover{color:var(--text);text-decoration:none}
+    .justify{text-align:justify}
 
     /* ---------- Responsive ---------- */
     @media(max-width:980px){
       .page{grid-template-columns:1fr;gap:20px}
-      .profile{position:sticky;top:72px;z-index:60}
+      .profile{position:static;top:auto;z-index:auto}
+      .profile,.content-shell,main,section{width:100%;max-width:100%}
       .content-shell{padding:18px}
     }
     @media(max-width:860px){
@@ -97,11 +101,11 @@
         <a href="#about">About</a>
         <a href="#news">News</a>
         <a href="#research">Research</a>
-        <a href="#pubs">Publications</a>
+       <!-- <a href="#pubs">Publications</a> -->
         <a href="#teaching">Teaching</a>
+       <a href="#studProjects">Foundation Projects</a>
         <a href="#talks">Talks</a>
-        <a href="#service">Service</a>
-        <a href="#contact">Contact</a>
+        <a href="#beyond">Beyond research</a>
       </nav>
 
       <button class="theme-toggle" id="themeToggle" title="Cambia tema">☾</button>
@@ -119,9 +123,10 @@
         <a class="pill" href="https://www.linkedin.com/in/gaia-assunta-bertolino">
           <img src="assets/img/linkedin-logo.png" alt="LinkedIn" class="icon" style="width:16px;height:16px;">LinkedIn
         </a>
-        <a class="pill" href="https://github.com/gab62-cam">💻 Github</a>
-        <a class="pill" href="cv.pdf">📎 Download CV</a>
-        <a class="pill" href="mailto:gab62@cam.ac.uk">📧 Email</a>
+        <!-- <a class="pill" href="https://scholar.google.com/citations?user=3PgVe7QAAAAJ&hl=it&authuser=1">🎓 Google Scholar</a> -->
+        <a class="pill" href="https://github.com/gab62-cam">💻  Github</a>
+        <a class="pill" href="cv.pdf">📎       CV</a>
+        <a class="pill" href="mailto:gab62@cam.ac.uk">📧     Email</a>
       </div>
     </aside>
 
@@ -129,18 +134,18 @@
       <main>
         <section id="about">
           <h2>About</h2>
-          <p>I am a <strong>Marie Skłodowska-Curie</strong> doctoral researcher (<abbr title="Doctor of Philosophy">PhD</abbr>) at the <strong>University of Cambridge</strong>, working on uncertainty-aware and resource-efficient machine learning for on-device health monitoring. My research integrates uncertainty quantification, continual learning, and embedded AI to enable trustworthy and adaptive systems deployable on constrained hardware.</p>
-          <p>Driven by curiosity and a commitment to innovation, I aim to harness <strong>AI</strong> to address practical challenges and improve quality of life. My path, from a BSc and MSc in Computer Engineering (AI/ML) at the <strong>University of Calabria</strong> to international research and industry experiences in <strong>Luxembourg</strong> and <strong>Cambridge</strong>, has shaped a multidisciplinary and collaborative approach to scientific inquiry.</p>
+          <p class="justify">I am a <strong>Marie Skłodowska-Curie</strong> doctoral researcher (<abbr title="Doctor of Philosophy">PhD</abbr>) at the <strong>University of Cambridge</strong>, working on uncertainty-aware and resource-efficient machine learning for on-device health monitoring. My research integrates uncertainty quantification, continual learning, and embedded AI to enable trustworthy and adaptive systems deployable on constrained hardware.</p>
+          <p class="justify">Driven by curiosity and a commitment to innovation, I aim to harness <strong>AI</strong> to address practical challenges and improve quality of life. My path, from a BSc and MSc in Computer Engineering (AI/ML) at the <strong>University of Calabria</strong> to international research and industry experiences in <strong>Luxembourg</strong> and <strong>Cambridge</strong>, has shaped a multidisciplinary and collaborative approach to scientific inquiry.</p>
         </section>
 
         <section id="news" class="news" aria-labelledby="news-h">
           <header>
-            <h2 id="news-h">News &amp; Updates</h2>
+            <h2 id="news-h">News</h2>
           </header>
           <ul id="newsList">
             <li>
               <time datetime="2025-10-01">December 2025</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_women-future-water-activity-7403888194385256448-NP7u">Presenting AquaLink Sud smart water solution at Women Shape the Future at the University of Calabria, 10-11 December 2025</a>
+              <a href="">Presenting AquaLink Sud smart water solution at Women Shape the Future at the University of Calabria, 10-11 December 2025</a>
             </li>
             <li>
               <time datetime="2025-10-01">October 2025</time>
@@ -156,7 +161,7 @@
             </li>
             <li>
               <time datetime="2025-10-01">October 2025</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">ANT Doctoral Network Kickoff in Delft, 27–30 October 2025</a>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">ANT Doctoral Network Kickoff in Delft where I was elected student representative for 6 months, 27–30 October 2025</a>
             </li>
           </ul>
         </section>
@@ -165,16 +170,16 @@
           <h2 id="res-h">Research</h2>
           <div class="list">
             <div class="item">
-              <h3>Master’s Thesis Research — RA-QA (Cambridge, 2025)</h3>
+              <h3>Master’s Thesis — Multimodal Question Answering for Respiratory Diagnosis</h3>
               <p class="muted" style="font-size:0.95rem;margin:2px 0 10px 0;"><em>Visiting student, University of Cambridge</em></p>
               <p>Developed <strong>RA-QA</strong>: the first multimodal benchmark and generative framework for respiratory audio question answering, bridging AI, health, and language understanding.</p>
-              <p><a href="https://github.com/gaiabertolino/resp-qa">Code</a></p>
-              <div class="tags" style="margin-top:6px;">
+              <!-- <p><a href="https://github.com/gaiabertolino/resp-qa">Code</a></p> -->
+              <!-- <div class="tags" style="margin-top:6px;">
                 <span class="tag">Respiratory audio</span>
                 <span class="tag">Healthcare</span>
                 <span class="tag">Multimodality</span>
                 <span class="tag">LLMs</span>
-              </div>
+              </div> -->
             </div>
           </div>
         </section>
@@ -206,7 +211,7 @@
               <p>MSc specialization in Artificial Intelligence and Machine Learning.<br>Final grade: 105/110</p>
               <p>Thesis research conducted in-person at the Department of Computer Science and Technology, University of Cambridge, under the supervision of <b>Prof. Cecilia Mascolo</b> and <b>Prof. Domenico Talia</b>.</p>
               <p>The dissertation focused on advancing machine learning models for the automation of clinical consultations and auscultation, exploring multimodal approaches, audio-based insights, and explainable AI techniques.</p>
-              <p>Major projects:
+              <!-- <p>Major projects:
                 <ul>
                   <li>Dynamic Graph Convolutional Neural Network for social network link prediction</li>
                   <li>Emergency Service Logistics Optimization using Agent-Based Planning</li>
@@ -215,14 +220,14 @@
                   <li>Improving RAG indexing through specialized embeddings</li>
                   <li>Analysis of tipping prompting strategies on GPT-o</li>
                 </ul>
-              </p>
+              </p> -->
             </div>
             <div class="item">
               <h3>Bachelor’s Degree in Computer Engineering</h3>
               <p class="muted">University of Calabria, Italy</p>
               <p class="muted" style="margin-top:4px;">2019–2022</p>
               <p>Final grade: 106/110<br>Thesis: API Development for IoT Applications using the Mulesoft Suite, Supervisor Prof. G. Fortino.</p>
-              <p>Major projects:
+              <!-- <p>Major projects:
                 <ul>
                   <li>VHDL-Based Design and Testing of a 16-Bit Carry Select Adder</li>
                   <li>Pipelined Adder-Subtractor in VHDL</li>
@@ -230,35 +235,102 @@
                   <li>Mobile Robotics: Path Planning and Control Strategies</li>
                   <li>Linear Control Systems: Transfer Functions, Stability, Frequency Response</li>
                 </ul>
-              </p>
+              </p> -->
             </div>
           </div>
         </section>
 
         <section id="previousProjects" aria-labelledby="proj-1">
-          <h2 id="studProjects">Student projects</h2>
+          <h2 id="studProjects">Foundation projects</h2>
           <div class="list">
-            <div class="item"><a href="https://github.com/gaiabertolino/DGCNN">DGCNN for Link Prediction on Social Networks (Twitter)</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/artificialIntelligenceProject">Agent-based Logistics Optimization for Emergency Services</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/bigData">Big Data Visualization Platform for US Flight Data</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/cloudComputingProject">Frequent Itemset Mining with Containerized Web Interface (Docker)</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/dataMining">Bank Fraud Detection using Anomaly Detection Techniques</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/computerVisionProject">Power Cable and Tower Detection using Mask R-CNN</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/RAGColBERT">Improving RAG Indexing with Specialized Embeddings</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/tippingGPTomni">Study on the Impact of "Tipping" for Optimized Prompts on GPT-omni</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/appunti/blob/e0571c682f588b6147e38bc18288747763bd2c2c/Relazione%20progetto%20pipeline.pdf">Pipelined Adder-Subtractor in VHDL — Implementation and Verification</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/carrySelect.VHDLProject">16-bit Carry Select Adder in VHDL — Design and Testing</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/robotics/tree/main">Design and Simulation of Industrial Robotic Arms (Kinematics and Control)</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/robotics/tree/main">Path Planning and Control Strategies for Mobile Robots</a></div>
-            <div class="item"><a href="https://github.com/gaiabertolino/automationProject">Analysis and Design of Linear Control Systems (Bode, Stability)</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/logistic-planning-emergency">AI agent-based Logistics Optimization for Emergency Services</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/maskrcnn-powercables-segmentation">Power Cable and Tower Detection using Mask R-CNN</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/ColBERT-RAG-Indexing">Improving Information Retrieval with ColBERT Indexing</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/dynamic-GCNN-for-link-prediction">Dynamic GCNN for Link Prediction in Twitter Data</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/how-tipping-affects-GPTomni">Short study on the Impact of "Tipping" for Optimized Prompts on GPT-omni</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/industrial-robotics">Industrial Robotics: Kinematics and Trajectory Planning</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/mobile-robotics">Mobile Robotics: Path Planning and Trajectory Control</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/docker-frequent-itemset-platform">Frequent Itemset Mining with Containerized Web Interface (Docker)</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/bank-fraud-detection">Bank Fraud Detection using Anomaly Detection Techniques</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/streamlit-flight-insights">Big Data Analytics on Air Flights</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/control-system-modeling">Fundamentals of Automatic Control: System Analysis and Control Design</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/vhdl-carry-select">16-bit Carry-Select Adder Design and Verification in VHDL</a></div>
+            <div class="item"><a href="https://github.com/gaiabertolino/appunti/blob/e0571c682f588b6147e38bc18288747763bd2c2c/Relazione%20progetto%20pipeline.pdf">Pipelined Adder-Subtractor in VHDL</a></div>
+            
+            
           </div>
         </section>
+ <section id="talks" class="news" aria-labelledby="talks-h">
+          <header>
+            <h2 id="talks-h">Talks</h2>
+          </header>
+          <ul id="talksList">
+
+            <li>
+              <time datetime="2025-10-01">August 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_design-funzionale-hardware-activity-7369727844542820353-fRqW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Co-founder and pitcher of a healthcare AI startup concept at L’Oro di Calabria Summer School (Belvedere Marittimo), presenting our project on digital health and disease diagnosis to peers, mentors, and the President of the Calabria Region</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">July 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_%C3%A8-stato-un-vero-piacere-partecipare-in-qualit%C3%A0-activity-7352338843334758400-pR1q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Speaker at InteliGO interdisciplinary AI training camp (Monte Terminillo), contributing two talks as an AIDIA member: generative multimodal analysis for respiratory disease diagnosis and deep learning applications for construction site safety</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">May 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_alcuni-scatti-dal-seminario-intelligenza-activity-7326334330056630272-Ulr8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Given a talk with the title <em>Artificial Intelligence in Construction: Innovation, Efficiency, and Sustainability</em></a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">May 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_unical-dimes-multicloud-activity-7331991438924107776-rRNP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Co-organizer and introductory speaker for a “Multicloud adoption” event with Nimbus Reply at DIMES, University of Calabria, exploring real-world use cases and best practices in cloud computing</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">February 2025</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_11-febbraio-donne-e-stem-aidia-per-un-futuro-activity-7295505598987563009-IMX6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Interviewee in a four-voice panel for AIDIA (Italian Association of Women Engineers and Architects) on the International Day of Women and Girls in Science, sharing my experience as a woman in ICT</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">November 2024</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_cybersecurity-leonardo-rdu-activity-7267554980985724929-L6Z7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Co-organizer of a full-day cybersecurity awareness & challenges event at the University of Calabria with Florence Consulting Group, connecting students, academics and industry through talks and hands-on hacking challenges</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">September 2024</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_commissionegiovani-ordine-ingegneri-activity-7247608966564769792-T76V?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Invited speaker at the conference “RiGenerazione Giovani Professionisti: chiamata ai giovani per la rigenerazione urbana”, presenting the Simeri Laboratorio Urbano project on urban regeneration and revitalisation of my hometown (Young Professionals Committee of the Order of Engineers of Catanzaro, Badolato City Council Hall).</a>
+            </li>
+             <li>
+              <time datetime="2025-10-01">March 2024</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_unical-googledevelopergroup-cosenza-activity-7180912490954821632-KhUF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Organizer of the event “Blockchain, AI, IoT and the Future of Professions” at the University of Calabria (with Rotaract Club of Cosenza and DINCI), bringing together academics and industry to discuss how emerging technologies will reshape careers.</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">March 2024</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_unical-googledevelopergroup-cosenza-activity-7180912490954821632-KhUF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Organizer & co-host of a fireside chat with Francesco Florio (Huawei Munich Research Center) for Google Developer Group Cosenza at the University of Calabria, on career paths and working abroad in tech.</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">April 2023</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_savethedate-cybersecurity-systemintegration-activity-7046852530680532994-Vnol?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Co-organizer and introductory speaker for a cybersecurity & system integration event at DIMES, University of Calabria, in collaboration with Florence Consulting Group</a>
+            </li>
+            <li>
+              <time datetime="2025-10-01">December 2021</time>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_api-femme-numerique-activity-6879061906582196224-7cMM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Invited speaker sharing my experience as a young female engineer and developer at the “Femmes dans le monde du numérique” event hosted by Cap4 Group and Féminin Pluriel Luxembourg</a>
+            </li>
+          </ul>
+        </section>
+        
+
+        <section id="Beyond research" aria-labelledby="beyond">
+          <h2 id="beyond">Beyond research</h2>
+          <div class="item">
+            <p class="muted justify">
+              Beyond my technical roles, I’m deeply engaged in mentoring, outreach, and student leadership. I’m the co-founder of Leonardo, the University of Calabria’s largest engineering student association, and a Regional Ambassador for SheTech, promoting gender equality in technology.
+              A passionate tennis player and lifelong sports enthusiast (swimming, dance, tennis), I’m also part of the Cambridge University Italian Society and the Cambridge University Lawn Tennis Club (CULTC).
+              Fluent in English and conversational in French, I believe in innovation as a driver of accessible and meaningful social impact.
+            </p>
+          </div>
+        </section>
+        
       </main>
     </div>
   </div>
 
   <div style="text-align:center;margin:32px 0;">
-    <p class="muted">© <span id="year"></span> Gaia A. Bertolino — Last update: October 2025</p>
+    <p class="muted">© <span id="year"></span> Gaia A. Bertolino — Last update: December 2025</p>
   </div>
 
   <script>
