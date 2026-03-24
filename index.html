@@ -63,6 +63,17 @@
     .news a{display:block;overflow:visible;text-overflow:unset;white-space:normal;line-height:1.45}
     .news a:not([href]), .news a[href=""]{color:var(--text);text-decoration:none;pointer-events:none;cursor:default}
     .news a:not([href]):hover, .news a[href=""]:hover{color:var(--text);text-decoration:none}
+    #news .news-head{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin-bottom:12px}
+    #news .news-head h2{margin:0}
+    #news .news-controls{display:flex;flex-direction:row;gap:8px}
+    #news .news-control{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:5px 11px;cursor:pointer;line-height:1}
+    #news .news-control:hover{background:color-mix(in oklab,var(--card) 88%,var(--bg))}
+    #news .news-carousel-window{overflow:hidden;transition:height .35s ease}
+    #news #newsList{display:flex;flex-direction:column;gap:12px;transition:transform .45s ease;will-change:transform}
+    #news #newsList li{display:block;border:1px solid var(--border);border-radius:10px;background:color-mix(in oklab,var(--card) 92%,var(--bg));padding:12px}
+    #news #newsList li time{display:block;min-width:0;width:auto;margin-bottom:8px}
+    #news #newsList li a{display:inline}
+    #news #newsList li:last-child{border-bottom:1px solid var(--border)}
     .justify{text-align:justify}
 
     /* ---------- Responsive ---------- */
@@ -140,61 +151,68 @@
         </section>
 
         <section id="news" class="news" aria-labelledby="news-h">
-          <header>
+          <header class="news-head">
             <h2 id="news-h">News</h2>
+            <div class="news-controls" aria-label="News controls">
+              <button class="news-control" id="newsPrev" type="button" aria-label="Previous news">↑</button>
+              <button class="news-control" id="newsNext" type="button" aria-label="Next news">↓</button>
+            </div>
           </header>
-          <ul id="newsList">
-            <li>
-              <time datetime="2026-01-09">February 2026</time>
-              <a href="https://interspeech2026.org/en-AU">Submitted RA-QA paper to Interspeech conference</a> (<a href="https://arxiv.org/abs/2602.18452">arXiv</a>)
-            </li>
-            <li>
-              <time datetime="2026-01-09">February 2026</time>
-              <a href="https://chil.ahli.cc">Submitted RAMoEA-QA paper to CHIL conference</a> (<a href="https://arxiv.org/abs/2603.06542">arXiv</a>)
-            </li>
-            <li>
-              <time datetime="2026-01-09">January 2026</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_on-january-9-i-had-the-pleasure-of-speaking-activity-7419724885293445120-qA8i?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Participated as Speaker at Calabria Young Talents Event bringing my research in Healthcare AI & startup Innovation</a>
-            </li>
-            <li>
-              <time datetime="2025-10-01">December 2025</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_a-couple-of-weeks-ago-i-had-the-chance-to-ugcPost-7409290016532738048-1L85?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Presenting AquaLink Sud smart water solution at Women Shape the Future at the University of Calabria, 10-11 December 2025</a>
-            </li>
-            <li>
-              <time datetime="2025-10-01">October 2025</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_women-future-water-activity-7403888194385256448-NP7u">Selected among the 30 participants out of 170 applicants for the Women Shape the Future female entrepreneurship program</a>
-            </li>
-            <li>
-              <time datetime="2025-10-01">October 2025</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_startcupcalabria-activity-7397588558083092480-Z0qI">Our startup on smart eyewear wins IP prize at StartCup 2025!</a>
-            </li>
-            <li>
-              <time datetime="2025-10-01">October 2025</time>
-              <a href="https://www.hughes.cam.ac.uk/about/news/nurturing-our-future-leaders/">Selected among 10 Hughes Hall students for Impactful Leadership Programme</a>
-            </li>
-            <li>
-              <time datetime="2025-10-01">October 2025</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">ANT Doctoral Network Kickoff in Delft where I was elected student representative for 6 months, 27–30 October 2025</a>
-            </li>
-          </ul>
+          <div class="news-carousel-window">
+            <ul id="newsList">
+              <li>
+                <time datetime="2026-01-09">February 2026</time>
+                <a href="https://interspeech2026.org/en-AU">Submitted RA-QA paper to Interspeech conference</a> (<a href="https://arxiv.org/abs/2602.18452">arXiv</a>)
+              </li>
+              <li>
+                <time datetime="2026-01-09">February 2026</time>
+                <a href="https://chil.ahli.cc">Submitted RAMoEA-QA paper to CHIL conference</a> (<a href="https://arxiv.org/abs/2603.06542">arXiv</a>)
+              </li>
+              <li>
+                <time datetime="2026-01-09">January 2026</time>
+                <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_on-january-9-i-had-the-pleasure-of-speaking-activity-7419724885293445120-qA8i?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Participated as Speaker at Calabria Young Talents Event bringing my research in Healthcare AI & startup Innovation</a>
+              </li>
+              <li>
+                <time datetime="2025-10-01">December 2025</time>
+                <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_a-couple-of-weeks-ago-i-had-the-chance-to-ugcPost-7409290016532738048-1L85?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Presenting AquaLink Sud smart water solution at Women Shape the Future at the University of Calabria, 10-11 December 2025</a>
+              </li>
+              <li>
+                <time datetime="2025-10-01">October 2025</time>
+                <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_women-future-water-activity-7403888194385256448-NP7u">Selected among the 30 participants out of 170 applicants for the Women Shape the Future female entrepreneurship program</a>
+              </li>
+              <li>
+                <time datetime="2025-10-01">October 2025</time>
+                <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_startcupcalabria-activity-7397588558083092480-Z0qI">Our startup on smart eyewear wins IP prize at StartCup 2025!</a>
+              </li>
+              <li>
+                <time datetime="2025-10-01">October 2025</time>
+                <a href="https://www.hughes.cam.ac.uk/about/news/nurturing-our-future-leaders/">Selected among 10 Hughes Hall students for Impactful Leadership Programme</a>
+              </li>
+              <li>
+                <time datetime="2025-10-01">October 2025</time>
+                <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">ANT Doctoral Network Kickoff in Delft where I was elected student representative for 6 months, 27–30 October 2025</a>
+              </li>
+            </ul>
+          </div>
         </section>
 
         <section id="research" aria-labelledby="res-h">
           <h2 id="res-h">Research</h2>
           <div class="list">
             <div class="item">
-              <h3>Research Paper — RAMoEA-QA: Hierarchical Specialization for Robust Respiratory Audio Question Answering</h3>
-              <p class="muted" style="font-size:0.95rem;margin:2px 0 10px 0;"><em>Hierarchically routed multimodal QA model</em></p>
+              <h3>RAMoEA-QA: Hierarchical Specialization for Robust Respiratory Audio Question Answering</h3>
+              <p class="muted" style="font-size:0.95rem;margin:2px 0 10px 0;"><em>Hierarchically routed multimodal QA model</em> | <a href="https://arxiv.org/abs/2603.06542">arXiv</a></p>
               <p>
                 Proposed <strong>RAMoEA-QA</strong>, a two-stage specialized generative system for respiratory audio QA: an <strong>Audio Mixture-of-Experts</strong> routes each recording to the most suitable pre-trained audio encoder, while a <strong>Language Mixture-of-Adapters</strong> selects a LoRA adapter on a shared frozen LLM to match query intent and answer format, improving robustness under domain, modality, and task shifts.
               </p>
             </div>
             <div class="item">
-              <h3>Data Paper — RA-QA: Towards Respiratory Audio-based Health Question Answering</h3>
-            <p class="muted" style="font-size:0.95rem;margin:2px 0 10px 0;"><em>Respiratory audio + natural language benchmark</em></p>
+              <h3>RA-QA: Towards Respiratory Audio-based Health Question Answering</h3>
+            <p class="muted" style="font-size:0.95rem;margin:2px 0 10px 0;"><em>Respiratory audio question answering benchmark</em> | <a href="https://arxiv.org/abs/2602.18452">arXiv</a></p>
             <p>
               Curated and harmonized <strong>11</strong> respiratory audio corpora to build <strong>RA-QA</strong>, the first respiratory audio question-answering dataset—about <strong>7.5M</strong> QA pairs across <strong>60+</strong> attributes and three formats (verification, multiple-choice, open-ended)—and introduced a benchmark comparing audio-text generative models against traditional audio classifiers.
             </p>
+            
 
               <!-- <h3>Master’s Thesis — Multimodal Question Answering for Respiratory Diagnosis</h3>
               <p class="muted" style="font-size:0.95rem;margin:2px 0 10px 0;"><em>Visiting student, University of Cambridge</em></p>
@@ -375,6 +393,77 @@
     const topmenu=document.getElementById('topmenu');
     menuToggle.addEventListener('click',()=>{topmenu.classList.toggle('open');});
     topmenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{if(window.innerWidth<=860){topmenu.classList.remove('open');}});});
+
+    // News carousel (3 items per slide)
+    const newsList=document.getElementById('newsList');
+    const newsPrev=document.getElementById('newsPrev');
+    const newsNext=document.getElementById('newsNext');
+    const newsViewport=document.querySelector('#news .news-carousel-window');
+    const newsItems=newsList?Array.from(newsList.children):[];
+    const itemsPerSlide=3;
+    const slideCount=Math.ceil(newsItems.length/itemsPerSlide);
+    const newsGap=newsList?parseFloat(getComputedStyle(newsList).rowGap || getComputedStyle(newsList).gap || '0'):0;
+    let newsIndex=0;
+    let autoSlideTimer;
+
+    const getNewsOffset=(index)=>{
+      const stop=index*itemsPerSlide;
+      let offset=0;
+      for(let i=0;i<stop;i++){
+        offset+=newsItems[i].offsetHeight;
+      }
+      if(stop>0){
+        offset+=newsGap*stop;
+      }
+      return offset;
+    };
+
+    const getNewsPageHeight=(index)=>{
+      const start=index*itemsPerSlide;
+      const end=Math.min(start+itemsPerSlide,newsItems.length);
+      let height=0;
+      for(let i=start;i<end;i++){
+        height+=newsItems[i].offsetHeight;
+      }
+      const visibleCount=end-start;
+      if(visibleCount>1){
+        height+=newsGap*(visibleCount-1);
+      }
+      return height;
+    };
+
+    const goToNewsSlide=(index)=>{
+      if(!slideCount || !newsViewport) return;
+      newsIndex=(index+slideCount)%slideCount;
+      const offset=getNewsOffset(newsIndex);
+      newsList.style.transform=`translateY(-${offset}px)`;
+      newsViewport.style.height=`${getNewsPageHeight(newsIndex)}px`;
+    };
+
+    if(newsList && slideCount>1){
+      newsPrev.addEventListener('click',()=>goToNewsSlide(newsIndex-1));
+      newsNext.addEventListener('click',()=>goToNewsSlide(newsIndex+1));
+
+      const startAutoSlide=()=>{
+        clearInterval(autoSlideTimer);
+        autoSlideTimer=setInterval(()=>goToNewsSlide(newsIndex+1),5000);
+      };
+      const stopAutoSlide=()=>clearInterval(autoSlideTimer);
+
+      newsList.addEventListener('mouseenter',stopAutoSlide);
+      newsList.addEventListener('mouseleave',startAutoSlide);
+      newsPrev.addEventListener('mouseenter',stopAutoSlide);
+      newsNext.addEventListener('mouseenter',stopAutoSlide);
+      newsPrev.addEventListener('mouseleave',startAutoSlide);
+      newsNext.addEventListener('mouseleave',startAutoSlide);
+
+      goToNewsSlide(0);
+      startAutoSlide();
+      window.addEventListener('resize',()=>goToNewsSlide(newsIndex));
+    }else if(newsPrev && newsNext){
+      newsPrev.disabled=true;
+      newsNext.disabled=true;
+    }
   </script>
 </body>
 </html>
