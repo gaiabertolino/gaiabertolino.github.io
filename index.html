@@ -18,7 +18,7 @@
 
     /* ---------- Base ---------- */
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial;transition:background .3s,color .3s}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial;font-size:16.5px;line-height:1.62;transition:background .3s,color .3s}
     a{color:var(--link);text-decoration:none}
     a:hover{color:var(--link-hover);text-decoration:underline}
     img{max-width:100%;display:block}
@@ -30,20 +30,32 @@
 
     .menu-toggle{display:none;border:1px solid var(--border);background:var(--card);border-radius:999px;padding:8px 12px;font-size:1rem;cursor:pointer}
     .topnav{display:flex;gap:14px;flex-wrap:wrap}
-    .topnav a{font-size:.95rem}
+    .topnav a{font-size:1rem}
     .topnav a.active{font-weight:600;text-decoration:underline}
 
     .theme-toggle{border:none;background:transparent;font-size:1.3rem;cursor:pointer;color:var(--text);transition:transform .2s}
     .theme-toggle:hover{transform:scale(1.1)}
 
-    .page{max-width:var(--maxw);margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:var(--sidebar) 1fr;gap:28px;margin-top:78px}
-    .profile{position:sticky;top:90px;align-self:start;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);text-align:center}
-    .content-shell{background:color-mix(in oklab,var(--card) 92%,var(--bg));border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);width:100%;max-width:min(92vw,840px);justify-self:start}
-    main{display:grid;gap:24px;width:100%;max-width:min(90vw,820px);margin:0 auto}
+    .page{max-width:var(--maxw);margin:0 auto;padding:32px 20px;margin-top:78px}
+    .content-shell{background:color-mix(in oklab,var(--card) 92%,var(--bg));border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);width:100%;max-width:min(94vw,1040px);margin:0 auto}
+    main{display:grid;gap:24px;width:100%;max-width:100%;margin:0}
+    .hero-layout{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.35fr);gap:18px;align-items:stretch}
+    .hero-layout .profile-card{order:1}
+    .hero-layout #about{order:2}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .profile-card{display:grid;justify-items:center;text-align:center}
+    .profile-card .avatar{margin:0 0 12px 0;width:132px;height:132px}
+    .intro-title{font-family:Merriweather,Georgia,serif;font-size:1.85rem;line-height:1.2;margin:0}
+    .intro-role{color:var(--muted);margin:.4rem 0 .8rem;font-size:1.03rem}
+    .intro-meta{font-size:.98rem;color:var(--muted)}
+    .intro-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;justify-content:center}
+    .contact-box h3{margin:0 0 10px;font-size:1.05rem}
+    .contact-box .intro-links{flex-direction:column;align-items:stretch}
+    .contact-box .pill{width:100%;justify-content:flex-start}
 
     /* ---------- Cards ---------- */
-    section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);scroll-margin-top:90px;width:100%;max-width:min(88vw,780px);margin:0 auto}
-    h2{font-family:Merriweather,Georgia,serif;font-size:1.35rem;margin:0 0 12px}
+    section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);scroll-margin-top:90px;width:100%;max-width:100%;margin:0}
+    h2{font-family:Merriweather,Georgia,serif;font-size:1.55rem;margin:0 0 12px}
     .muted{color:var(--muted)}
     .list{display:grid;gap:14px}
     .item{padding:14px;border:1px solid var(--border);border-radius:12px;background:color-mix(in oklab,var(--card) 92%,var(--bg))}
@@ -53,7 +65,9 @@
     .name{font-family:Merriweather,Georgia,serif;font-size:1.5rem;line-height:1.2;margin:0}
     .role{color:var(--muted);margin:.25rem 0 .75rem}
     .side-links{display:grid;gap:8px;margin:14px 0;text-align:left}
-    .pill{display:flex;align-items:center;gap:10px;padding:10px 12px;background:color-mix(in oklab,var(--card) 94%,var(--bg));border:1px solid var(--border);border-radius:999px}
+    .pill{display:flex;align-items:center;gap:8px;padding:10px 12px;background:color-mix(in oklab,var(--card) 94%,var(--bg));border:1px solid var(--border);border-radius:999px;font-size:.98rem}
+    .pill .icon{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;line-height:1}
+    .pill img.icon{width:18px;height:18px}
 
     /* ---------- News ---------- */
     .news{position:relative}
@@ -63,40 +77,82 @@
     .news a{display:block;overflow:visible;text-overflow:unset;white-space:normal;line-height:1.45}
     .news a:not([href]), .news a[href=""]{color:var(--text);text-decoration:none;pointer-events:none;cursor:default}
     .news a:not([href]):hover, .news a[href=""]:hover{color:var(--text);text-decoration:none}
-    #news .news-head{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin-bottom:12px}
+    #news .news-head{margin-bottom:12px}
     #news .news-head h2{margin:0}
-    #news .news-controls{display:flex;flex-direction:row;gap:8px}
-    #news .news-control{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:5px 11px;cursor:pointer;line-height:1}
-    #news .news-control:hover{background:color-mix(in oklab,var(--card) 88%,var(--bg))}
+    #news .news-body{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:stretch}
+    #news .news-controls{
+      position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:12px;align-self:stretch;padding:12px 8px;border:1px solid var(--border);border-radius:12px;
+      background:color-mix(in oklab,var(--card) 94%,var(--bg))
+    }
+    #news .news-controls::before{
+      content:"";position:absolute;top:16px;bottom:16px;left:50%;transform:translateX(-50%);
+      width:2px;background:color-mix(in oklab,var(--border) 70%,var(--muted));opacity:.8
+    }
+    #news .news-timeline{position:relative;display:flex;flex-direction:column;gap:12px;z-index:1}
+    #news .timeline-dot{
+      width:16px;height:16px;border-radius:999px;border:2px solid color-mix(in oklab,var(--border) 65%,var(--muted));
+      background:var(--card);cursor:pointer;padding:0;transition:transform .16s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease
+    }
+    #news .timeline-dot:hover{transform:scale(1.08);border-color:color-mix(in oklab,var(--link) 55%,var(--border))}
+    #news .timeline-dot.is-active{
+      background:var(--link);border-color:var(--link);
+      box-shadow:0 0 0 4px color-mix(in oklab,var(--link) 22%,transparent)
+    }
+    #news .timeline-dot:focus-visible{outline:2px solid var(--link);outline-offset:2px}
     #news .news-carousel-window{overflow:hidden;transition:height .35s ease}
     #news #newsList{display:flex;flex-direction:column;gap:12px;transition:transform .45s ease;will-change:transform}
     #news #newsList li{display:block;border:1px solid var(--border);border-radius:10px;background:color-mix(in oklab,var(--card) 92%,var(--bg));padding:12px}
-    #news #newsList li time{display:block;min-width:0;width:auto;margin-bottom:8px}
-    #news #newsList li a{display:inline}
+    #news #newsList li .news-line{display:flex;align-items:center;gap:10px}
+    #news #newsList li time{display:block;min-width:220px;width:220px;flex-shrink:0;margin:0;font-size:.9rem;white-space:normal;text-align:left;margin-left:auto}
+    #news #newsList li time::before{content:"📅";font-size:.9em;margin-right:6px}
+    #news #newsList li a{display:inline;font-size:1.1rem;line-height:1.56;font-weight:500}
+    #news .news-tag{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-width:88px;height:24px;padding:0 10px;border-radius:7px;
+      border:1px solid transparent;font-size:.76rem;font-weight:700;letter-spacing:.01em;line-height:1
+    }
+    #news .news-tag.conference{background:#2563eb;color:#ffffff;border-color:#1d4ed8}
+    #news .news-tag.seminar{background:#7651a8;color:#ffffff;border-color:#604189}
+    #news .news-tag.activity{background:#1f8a3b;color:#ffffff;border-color:#196f30}
+    #news .news-tag.award{background:#c07a10;color:#ffffff;border-color:#9c620b}
     #news #newsList li:last-child{border-bottom:1px solid var(--border)}
     .justify{text-align:justify}
 
     /* ---------- Responsive ---------- */
     @media(max-width:980px){
-      .page{grid-template-columns:1fr;gap:20px}
-      .profile{position:static;top:auto;z-index:auto}
-      .profile,.content-shell,main,section{width:100%;max-width:100%}
+      .content-shell,main,section{width:100%;max-width:100%}
       .content-shell{padding:18px}
+      .hero-layout{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .hero-layout .profile-card{order:1}
+      .hero-layout #about{order:2}
     }
     @media(max-width:860px){
       .menu-toggle{display:inline-flex;align-items:center;gap:8px}
       .topnav{display:none;position:absolute;left:0;right:0;top:54px;padding:12px 20px;background:color-mix(in oklab,var(--bg) 92%,transparent);border-bottom:1px solid var(--border)}
       .topnav.open{display:flex;flex-wrap:wrap}
-      .profile{position:static;top:auto;z-index:auto}
     }
     @media(max-width:600px){
+      body{font-size:16px;line-height:1.58}
       .page{padding:20px 14px;margin-top:70px}
       .avatar{width:96px;height:96px}
       .content-shell, main, section{max-width:100%;width:100%}
       section{padding:16px}
-      .pill{padding:8px 10px;font-size:.9rem}
+      .pill{padding:8px 10px;font-size:.95rem}
       .news a{white-space:normal}
-      .news time{min-width:70px;font-size:.8rem}
+      .news time{min-width:70px;font-size:.9rem}
+      h2{font-size:1.4rem}
+      .intro-title{font-size:1.62rem}
+      #news #newsList li .news-line{flex-wrap:wrap}
+      #news #newsList li .news-tag{order:1}
+      #news #newsList li a{order:2;flex:1 1 100%}
+      #news #newsList li time{order:3;margin-left:0;min-width:0;text-align:left}
+      #news #newsList li time{text-align:left}
+      #news .news-body{grid-template-columns:1fr}
+      #news .news-controls{flex-direction:row;align-self:auto;justify-content:flex-start;padding:8px 10px}
+      #news .news-controls::before{top:50%;bottom:auto;left:16px;right:16px;transform:translateY(-50%);width:auto;height:2px}
+      #news .news-timeline{flex-direction:row}
     }
 
     html{scroll-behavior:smooth}
@@ -112,91 +168,180 @@
       <nav class="topnav" id="topmenu">
         <a href="#about">About</a>
         <a href="#news">News</a>
-        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="research.html">Research</a>
+
        <!-- <a href="#pubs">Publications</a> -->
-        <a href="#teaching">Teaching</a>
-       <a href="#studProjects">Foundation Projects</a>
-        <a href="#talks">Talks</a>
-        <a href="#beyond">Beyond research</a>
+        <!-- <a href="#teaching">Teaching</a> -->
+       <!-- <a href="projects.html">Foundation Projects</a> -->
+        <!-- <a href="#talks">Talks</a> -->
+        <!-- <a href="#beyond">Beyond research</a> -->
       </nav>
 
       <button class="theme-toggle" id="themeToggle" title="Cambia tema">☾</button>
     </div>
   </header>
-
-  <div class="page">
-    <aside class="profile">
-      <img class="avatar" src="assets/img/photo.jpg" alt="ritratto di Gaia A. Bertolino" />
-      <h1 class="name">Gaia A. Bertolino</h1>
-      <p class="role" style="margin-top:10px;">Research Assistant <br> &amp; PhD Student<br><strong>University of Cambridge</strong></p>
-      <p style="font-size:0.60rem;color:var(--muted);margin-top:8px;">Department of Computer Science and Technology<br>University of Cambridge</p>
-
-      <div class="side-links" style="margin-top:30px;">
-        <a class="pill" href="https://www.linkedin.com/in/gaia-assunta-bertolino">
-          <img src="assets/img/linkedin-logo.png" alt="LinkedIn" class="icon" style="width:16px;height:16px;">LinkedIn
-        </a>
-        <!-- <a class="pill" href="https://scholar.google.com/citations?user=3PgVe7QAAAAJ&hl=it&authuser=1">🎓 Google Scholar</a> -->
-        <a class="pill" href="https://github.com/gab62-cam">💻  Github</a>
-        <a class="pill" href="cv.pdf">📎       CV</a>
-        <a class="pill" href="mailto:gab62@cam.ac.uk">📧     Email</a>
-      </div>
-    </aside>
-
+    <div class="page">
     <div class="content-shell">
       <main>
-        <section id="about">
-          <h2>About</h2>
-          <p class="justify">I am a <strong>Marie Skłodowska-Curie</strong> doctoral researcher (<abbr title="Doctor of Philosophy">PhD</abbr>) at the <strong>University of Cambridge</strong>, working on uncertainty-aware and resource-efficient machine learning for on-device health monitoring. My research integrates uncertainty quantification, continual learning, and embedded AI to enable trustworthy and adaptive systems deployable on constrained hardware.</p>
-          <p class="justify">Driven by curiosity and a commitment to innovation, I aim to harness <strong>AI</strong> to address practical challenges and improve quality of life. My path, from a BSc and MSc in Computer Engineering (AI/ML) at the <strong>University of Calabria</strong> to international research and industry experiences in <strong>Luxembourg</strong> and <strong>Cambridge</strong>, has shaped a multidisciplinary and collaborative approach to scientific inquiry.</p>
-        </section>
+        <div class="hero-layout">
+          <section id="about">
+            <h2>About</h2>
+            <p class="justify">I am a <strong>Marie Skłodowska-Curie</strong> doctoral researcher (<abbr title="Doctor of Philosophy">PhD</abbr>) at the <strong>University of Cambridge</strong>, researching on vocal biomarkers for uncertainty-aware grounded conversational AI for health assessment.</p>
+            <p class="justify">Driven by curiosity and a commitment to innovation, I aim to harness <strong>AI</strong> to address practical challenges and improve quality of life though digital healthcare.</p>
+            <p class="justify">My path, from a BSc and MSc in Computer Engineering (AI/ML) at the <strong>University of Calabria</strong> to international research and industry experiences in <strong>Luxembourg</strong> and the <strong>United Kingdom</strong>, has shaped a multidisciplinary and collaborative approach to scientific inquiry.</p>
+            <p class="justify">Beyond research, I am passionate about tennis and write about science for <strong>Varsity Science</strong>.</p>
+          </section>
+          <section class="profile-card" aria-label="Profile">
+            <img class="avatar" src="assets/img/photo.jpg" alt="ritratto di Gaia A. Bertolino" />
+            <h1 class="intro-title">Gaia A. Bertolino</h1>
+            <p class="intro-role">Research Assistant &amp; PhD Student · <strong>University of Cambridge</strong></p>
+            <p class="intro-meta">Department of Computer Science and Technology, University of Cambridge</p>
+            <div class="intro-links">
+              <a class="pill" href="https://www.linkedin.com/in/gaia-assunta-bertolino"><img src="assets/img/linkedin-logo.png" alt="LinkedIn" class="icon"><span>LinkedIn</span></a>
+              <a class="pill" href="https://github.com/gab62-cam"><span class="icon">💻</span><span>Github</span></a>
+              <!-- <a class="pill" href="cv.pdf"><span class="icon">📎</span><span>CV</span></a> -->
+              <a class="pill" href="mailto:gab62@cam.ac.uk"><span class="icon">📧</span><span>Email</span></a>
+            </div>
+          </section>
+        </div>
 
         <section id="news" class="news" aria-labelledby="news-h">
           <header class="news-head">
             <h2 id="news-h">News</h2>
-            <div class="news-controls" aria-label="News controls">
-              <button class="news-control" id="newsPrev" type="button" aria-label="Previous news">↑</button>
-              <button class="news-control" id="newsNext" type="button" aria-label="Next news">↓</button>
-            </div>
           </header>
-          <div class="news-carousel-window">
+          <div class="news-body">
+            <div class="news-controls" aria-label="News timeline">
+              <div class="news-timeline" id="newsTimeline" role="tablist" aria-label="News pages"></div>
+            </div>
+            <div class="news-carousel-window">
             <ul id="newsList">
               <li>
-                <time datetime="2026-01-09">February 2026</time>
-                <a href="https://interspeech2026.org/en-AU">Submitted RA-QA paper to Interspeech conference</a> (<a href="https://arxiv.org/abs/2602.18452">arXiv</a>)
+                <div class="news-line">
+                  <span class="news-tag activity">Activity</span>
+                  <a href="https://www.cost.eu/cost-events/evoicenets-international-vocal-biomarkers-conference-and-training-school-2026/">Participated in the Vocal Biomarkers Training School hosted by the eVoiceNet COST Action at the Luxembourg Institute of Health</a>
+                  <time datetime="2026-07-01">July 2026 · Luxembourg</time>
+                </div>
               </li>
               <li>
-                <time datetime="2026-01-09">February 2026</time>
-                <a href="https://chil.ahli.cc">Submitted RAMoEA-QA paper to CHIL conference</a> (<a href="https://arxiv.org/abs/2603.06542">arXiv</a>)
+                <div class="news-line">
+                  <span class="news-tag conference">Conference</span>
+                  <a href="https://www.cost.eu/cost-events/evoicenets-international-vocal-biomarkers-conference-and-training-school-2026/">Presented at the International Vocal Biomarkers Conference (IVBC 2026) in Luxembourg our work on vocal biomarkers for respiratory audio question answering</a>
+                  <time datetime="2026-06-29">June 2026 · Luxembourg</time>
+                </div>
               </li>
               <li>
-                <time datetime="2026-01-09">January 2026</time>
-                <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_on-january-9-i-had-the-pleasure-of-speaking-activity-7419724885293445120-qA8i?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Participated as Speaker at Calabria Young Talents Event bringing my research in Healthcare AI & startup Innovation</a>
+                <div class="news-line">
+                  <span class="news-tag conference">Conference</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_can-we-address-heterogeneity-in-respiratory-activity-7480308066387832832-yyb1?utm_medium=ios_app&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M&utm_source=social_share_send&utm_campaign=copy_link">Presented RAMoEA-QA at MobiUK 2026, the UK Mobile, Wearable and Ubiquitous Systems Research Symposium co-located with ACM MobiSys</a>
+                  <time datetime="2026-06-25">June 2026 · Cambridge, UK</time>
+                </div>
               </li>
               <li>
-                <time datetime="2025-10-01">December 2025</time>
+                <div class="news-line">
+                  <span class="news-tag activity">Activity</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_it-was-a-pleasure-volunteering-at-the-acm-activity-7479982435347320832-6qQN?utm_medium=ios_app&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M&utm_source=social_share_send&utm_campaign=copy_link">Volunteered at ACM MobiSys 2026 in Cambridge</a>
+                  <time datetime="2026-06-21">June 2026 · Cambridge, UK</time>
+                </div>
+              </li>
+              <li>
+                <div class="news-line">
+                  <span class="news-tag activity">Activity</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_what-rotaract-has-taught-me-is-that-we-all-activity-7476967348051193856-vtwF?utm_medium=ios_app&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M&utm_source=social_share_send&utm_campaign=copy_link">Invited to the European Parliament in Brussels for an open discussions on Europe’s future digital sovereignty</a>
+                  <time datetime="2026-07-01">May 2026 · Brussels, Belgium</time>
+                </div>
+              </li>
+              <li>
+                <div class="news-line">
+                  <span class="news-tag seminar">Seminar</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_a-few-days-ago-i-had-the-pleasure-of-contributing-activity-7466508299677540354-zF2b?utm_medium=ios_app&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M&utm_source=social_share_send&utm_campaign=copy_link">Spoke at the seminar “Smart Hospitals: The Digital Revolution for a New Healthcare Paradigm in Calabria” at the University of Calabria, Italy</a>
+                  <time>May 2026, University of Calabria, Italy</time>
+                </div>
+              </li>
+              <li>
+                <div class="news-line">
+                  <span class="news-tag conference">Conference</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_our-recent-work-on-respiratory-audio-conversational-activity-7466099805774229504-WETu?utm_medium=ios_app&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M&utm_source=social_share_send&utm_campaign=copy_link">Presented our research on respiratory audio question-answering at the Oxbridge Women in Computer Science Conference in Oxford (9 May 2026), selected among the top 12.5% papers for an oral presentation</a>
+                  <time datetime="2026-05-09">May 2026 · Oxford, UK</time>
+                </div>
+              </li>
+              <!-- <li>
+                <div class="news-line">
+                  <span class="news-tag conference">Conference</span>
+                  <a href="https://mlhc.org">Submitted RAMoEA-QA paper to MLHC conference</a> (<a href="https://arxiv.org/abs/2603.06542">arXiv</a>)
+                  <time datetime="2026-04-01">April 2026 · Cambridge, UK</time>
+                </div>
+              </li> -->
+              <li>
+                <div class="news-line">
+                  <span class="news-tag activity">Activity</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_over-the-easter-break-i-had-the-opportunity-activity-7458849642143809536-ckG5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Visiting at Chinese universities and state facilities though YES Scholarship</a>
+                  <time datetime="2026-03-29">March 2026 - April 2026 · China</time>
+                </div>
+              </li>
+              <li>
+                <div class="news-line">
+                  <span class="news-tag activity">Activity</span>
+                  <a href="https://www.linkedin.com/in/gaia-assunta-bertolino/recent-activity/all/">In Antwerp for the semi-annual MSCA ANT Doctoral Network Meeting presenting my research</a>
+                  <time datetime="2026-03-23">March 2026 · Antwerp, Belgium</time>
+                </div>
+              </li>
+              <li>
+                <div class="news-line">
+                  <span class="news-tag activity">Activity</span> 
+                  <a href="https://magazine.cues.org.uk/wp-content/uploads/2026/03/Magazine_25-26.pdf">Our startup journey in the South of Italy has been featured in the Cambridge University Engineering Society annual issue</a>
+                  <time datetime="2026-03-01">March 2026 · Cambridge, UK</time>
+                </div>
+              </li>
+              <!-- <li>
+                <div class="news-line">
+                  <span class="news-tag conference">Conference</span>
+                  <a href="https://interspeech2026.org/en-AU">Submitted RA-QA paper to Interspeech conference</a> (<a href="https://arxiv.org/abs/2602.18452">arXiv</a>)
+                  <time datetime="2026-02-01">February 2026 · Cambridge, UK</time>
+                </div>
+              </li> -->
+              <li>
+                <div class="news-line">
+                  <span class="news-tag activity">Activity</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_on-january-9-i-had-the-pleasure-of-speaking-activity-7419724885293445120-qA8i?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Participated as Speaker at Calabria Young Talents Event bringing my research in Healthcare AI & startup Innovation</a>
+                  <time datetime="2026-01-01">01/2026 · Calabria, Italy</time>
+                </div>
+              </li>
+              <!-- <li>
+                <time datetime="2025-12-10">December 2025</time>
                 <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_a-couple-of-weeks-ago-i-had-the-chance-to-ugcPost-7409290016532738048-1L85?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Presenting AquaLink Sud smart water solution at Women Shape the Future at the University of Calabria, 10-11 December 2025</a>
-              </li>
-              <li>
+              </li> -->
+              <!-- <li>
                 <time datetime="2025-10-01">October 2025</time>
                 <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_women-future-water-activity-7403888194385256448-NP7u">Selected among the 30 participants out of 170 applicants for the Women Shape the Future female entrepreneurship program</a>
+              </li> -->
+              <li>
+                <div class="news-line">
+                  <span class="news-tag award">Award</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_startcupcalabria-activity-7397588558083092480-Z0qI">Our startup on smart eyewear wins IP prize at StartCup 2025!</a>
+                  <time datetime="2025-10-01">October 2025 · Calabria, Italy</time>
+                </div>
               </li>
               <li>
-                <time datetime="2025-10-01">October 2025</time>
-                <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_startcupcalabria-activity-7397588558083092480-Z0qI">Our startup on smart eyewear wins IP prize at StartCup 2025!</a>
+                <div class="news-line">
+                  <span class="news-tag award">Award</span>
+                  <a href="https://www.hughes.cam.ac.uk/about/news/nurturing-our-future-leaders/">Selected among 10 Hughes Hall students for Impactful Leadership Programme</a>
+                  <time datetime="2025-10-01">October 2025 · Cambridge, UK</time>
+                </div>
               </li>
               <li>
-                <time datetime="2025-10-01">October 2025</time>
-                <a href="https://www.hughes.cam.ac.uk/about/news/nurturing-our-future-leaders/">Selected among 10 Hughes Hall students for Impactful Leadership Programme</a>
-              </li>
-              <li>
-                <time datetime="2025-10-01">October 2025</time>
-                <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">ANT Doctoral Network Kickoff in Delft where I was elected student representative for 6 months, 27–30 October 2025</a>
+                <div class="news-line">
+                  <span class="news-tag activity">Activity</span>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">ANT Doctoral Network Kickoff in Delft where I was elected student representative for 6 months</a>
+                  <time datetime="2025-10-01">October 2025 · Delft, Netherlands</time>
+                </div>
               </li>
             </ul>
+            </div>
           </div>
         </section>
 
-        <section id="research" aria-labelledby="res-h">
+        <!-- <section id="research" aria-labelledby="res-h">
           <h2 id="res-h">Research</h2>
           <div class="list">
             <div class="item">
@@ -211,7 +356,7 @@
             <p class="muted" style="font-size:0.95rem;margin:2px 0 10px 0;"><em>Respiratory audio question answering benchmark</em> | <a href="https://arxiv.org/abs/2602.18452">arXiv</a></p>
             <p>
               Curated and harmonized <strong>11</strong> respiratory audio corpora to build <strong>RA-QA</strong>, the first respiratory audio question-answering dataset—about <strong>7.5M</strong> QA pairs across <strong>60+</strong> attributes and three formats (verification, multiple-choice, open-ended)—and introduced a benchmark comparing audio-text generative models against traditional audio classifiers.
-            </p>
+            </p> -->
             
 
               <!-- <h3>Master’s Thesis — Multimodal Question Answering for Respiratory Diagnosis</h3>
@@ -224,10 +369,10 @@
                 <span class="tag">Multimodality</span>
                 <span class="tag">LLMs</span>
               </div> -->
-            </div>
+            <!-- </div>
           </div>
-        </section>
-
+        </section> -->
+<!-- 
         <section id="teaching" aria-labelledby="teach-h">
           <h2 id="teach-h">Teaching</h2>
           <div class="list">
@@ -237,22 +382,17 @@
               <p class="muted" style="margin-top:4px;">Lent Term 2026</p>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <section id="education" aria-labelledby="edu-h">
           <h2 id="edu-h">Education</h2>
           <div class="list">
             <div class="item">
-              <h3>PhD in Computer Science</h3>
-              <p class="muted">University of Cambridge, UK</p>
-              <p class="muted" style="margin-top:4px;">2025–2029 (expected)</p>
-              <p>Research on uncertainty-aware and resource-efficient machine learning for on-device health monitoring, integrating uncertainty quantification, continual learning, and embedded AI to enable trustworthy and adaptive systems deployable on constrained hardware.</p>
-            </div>
+              <h3>PhD in Computer Science — University of Cambridge, UK (2025 – 2029, expected)</h3>
+<p>Research on trustworthy multimodal conversational AI for health monitoring, integrating audio, language, and clinical data with uncertainty quantification to generate reliable, context-aware responses to health-related queries.</p>            </div>
             <div class="item">
-              <h3>Master’s Degree in Computer Engineering (AI/ML)</h3>
-              <p class="muted">University of Calabria, Italy</p>
-              <p class="muted" style="margin-top:4px;">2022 – July 2025</p>
-              <p>MSc specialization in Artificial Intelligence and Machine Learning.<br>Final grade: 105/110</p>
+              <h3>MSc in Computer Engineering (AI/ML) — University of Calabria, Italy (2022 - 2025)</h3>
+              <p>Specialization in Artificial Intelligence and Machine Learning.</p>
               <p>Thesis research conducted in-person at the Department of Computer Science and Technology, University of Cambridge, under the supervision of <b>Prof. Cecilia Mascolo</b> and <b>Prof. Domenico Talia</b>.</p>
               <p>The dissertation focused on advancing machine learning models for the automation of clinical consultations and auscultation, exploring multimodal approaches, audio-based insights, and explainable AI techniques.</p>
               <!-- <p>Major projects:
@@ -267,10 +407,8 @@
               </p> -->
             </div>
             <div class="item">
-              <h3>Bachelor’s Degree in Computer Engineering</h3>
-              <p class="muted">University of Calabria, Italy</p>
-              <p class="muted" style="margin-top:4px;">2019–2022</p>
-              <p>Final grade: 106/110<br>Thesis: Thesis: API Development for IoT Applications using the Mulesoft Suite, Supervisor Prof. G. Fortino (Highly Cited Researcher in Computer Science by Clarivate for five consecutive years)</p>
+              <h3>BSc in Computer Engineering — University of Calabria, Italy (2019 – 2022)</h3>
+              <p>Thesis: API Development for IoT Applications using the Mulesoft Suite, Supervisor Prof. G. Fortino (Highly Cited Researcher in Computer Science by Clarivate for five consecutive years)</p>
               <!-- <p>Major projects:
                 <ul>
                   <li>VHDL-Based Design and Testing of a 16-Bit Carry Select Adder</li>
@@ -284,7 +422,7 @@
           </div>
         </section>
 
-        <section id="previousProjects" aria-labelledby="proj-1">
+        <!-- <section id="previousProjects" aria-labelledby="proj-1">
           <h2 id="studProjects">Foundation projects</h2>
           <div class="list">
             <div class="item"><a href="https://github.com/gaiabertolino/logistic-planning-emergency">AI agent-based Logistics Optimization for Emergency Services</a></div>
@@ -303,8 +441,8 @@
             
             
           </div>
-        </section>
- <section id="talks" class="news" aria-labelledby="talks-h">
+        </section> -->
+ <!-- <section id="talks" class="news" aria-labelledby="talks-h">
           <header>
             <h2 id="talks-h">Talks</h2>
           </header>
@@ -336,15 +474,15 @@
             </li>
             <li>
               <time datetime="2025-10-01">September 2024</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_commissionegiovani-ordine-ingegneri-activity-7247608966564769792-T76V?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Invited speaker at the conference “RiGenerazione Giovani Professionisti: chiamata ai giovani per la rigenerazione urbana”, presenting the Simeri Laboratorio Urbano project on urban regeneration and revitalisation of my hometown (Young Professionals Committee of the Order of Engineers of Catanzaro, Badolato City Council Hall).</a>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_commissionegiovani-ordine-ingegneri-activity-7247608966564769792-T76V?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Invited speaker at the conference “RiGenerazione Giovani Professionisti: chiamata ai giovani per la rigenerazione urbana”, presenting the Simeri Laboratorio Urbano project on urban regeneration and revitalisation of my hometown (Young Professionals Committee of the Order of Engineers of Catanzaro, Badolato City Council Hall)</a>
             </li>
              <li>
               <time datetime="2025-10-01">March 2024</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_unical-googledevelopergroup-cosenza-activity-7180912490954821632-KhUF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Organizer of the event “Blockchain, AI, IoT and the Future of Professions” at the University of Calabria (with Rotaract Club of Cosenza and DINCI), bringing together academics and industry to discuss how emerging technologies will reshape careers.</a>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_unical-googledevelopergroup-cosenza-activity-7180912490954821632-KhUF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Organizer of the event “Blockchain, AI, IoT and the Future of Professions” at the University of Calabria (with Rotaract Club of Cosenza and DINCI), bringing together academics and industry to discuss how emerging technologies will reshape careers</a>
             </li>
             <li>
               <time datetime="2025-10-01">March 2024</time>
-              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_unical-googledevelopergroup-cosenza-activity-7180912490954821632-KhUF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Organizer & co-host of a fireside chat with Francesco Florio (Huawei Munich Research Center) for Google Developer Group Cosenza at the University of Calabria, on career paths and working abroad in tech.</a>
+              <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_unical-googledevelopergroup-cosenza-activity-7180912490954821632-KhUF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Organizer & co-host of a fireside chat with Francesco Florio (Huawei Munich Research Center) for Google Developer Group Cosenza at the University of Calabria, on career paths and working abroad in tech</a>
             </li>
             <li>
               <time datetime="2025-10-01">April 2023</time>
@@ -355,10 +493,10 @@
               <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_api-femme-numerique-activity-6879061906582196224-7cMM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M">Invited speaker sharing my experience as a young female engineer and developer at the “Femmes dans le monde du numérique” event hosted by Cap4 Group and Féminin Pluriel Luxembourg</a>
             </li>
           </ul>
-        </section>
+        </section> -->
         
 
-        <section id="Beyond research" aria-labelledby="beyond">
+        <!-- <section id="Beyond research" aria-labelledby="beyond">
           <h2 id="beyond">Beyond research</h2>
           <div class="item">
             <p class="muted justify">
@@ -367,14 +505,14 @@
               Fluent in English and conversational in French, I believe in innovation as a driver of accessible and meaningful social impact.
             </p>
           </div>
-        </section>
+        </section> -->
         
       </main>
     </div>
   </div>
 
   <div style="text-align:center;margin:32px 0;">
-    <p class="muted">© <span id="year"></span> Gaia A. Bertolino — Last update: December 2025</p>
+    <p class="muted">© <span id="year"></span> Gaia A. Bertolino — Last update: July 2026</p>
   </div>
 
   <script>
@@ -396,8 +534,8 @@
 
     // News carousel (3 items per slide)
     const newsList=document.getElementById('newsList');
-    const newsPrev=document.getElementById('newsPrev');
-    const newsNext=document.getElementById('newsNext');
+    const newsTimeline=document.getElementById('newsTimeline');
+    const timelineDots=[];
     const newsViewport=document.querySelector('#news .news-carousel-window');
     const newsItems=newsList?Array.from(newsList.children):[];
     const itemsPerSlide=3;
@@ -438,11 +576,26 @@
       const offset=getNewsOffset(newsIndex);
       newsList.style.transform=`translateY(-${offset}px)`;
       newsViewport.style.height=`${getNewsPageHeight(newsIndex)}px`;
+      timelineDots.forEach((dot,i)=>{
+        dot.classList.toggle('is-active',i===newsIndex);
+        dot.setAttribute('aria-selected',i===newsIndex?'true':'false');
+      });
     };
 
     if(newsList && slideCount>1){
-      newsPrev.addEventListener('click',()=>goToNewsSlide(newsIndex-1));
-      newsNext.addEventListener('click',()=>goToNewsSlide(newsIndex+1));
+      if(newsTimeline){
+        for(let i=0;i<slideCount;i++){
+          const dot=document.createElement('button');
+          dot.type='button';
+          dot.className='timeline-dot';
+          dot.setAttribute('role','tab');
+          dot.setAttribute('aria-label',`Go to news page ${i+1}`);
+          dot.setAttribute('aria-selected','false');
+          dot.addEventListener('click',()=>goToNewsSlide(i));
+          newsTimeline.appendChild(dot);
+          timelineDots.push(dot);
+        }
+      }
 
       const startAutoSlide=()=>{
         clearInterval(autoSlideTimer);
@@ -452,17 +605,15 @@
 
       newsList.addEventListener('mouseenter',stopAutoSlide);
       newsList.addEventListener('mouseleave',startAutoSlide);
-      newsPrev.addEventListener('mouseenter',stopAutoSlide);
-      newsNext.addEventListener('mouseenter',stopAutoSlide);
-      newsPrev.addEventListener('mouseleave',startAutoSlide);
-      newsNext.addEventListener('mouseleave',startAutoSlide);
+      newsTimeline?.addEventListener('mouseenter',stopAutoSlide);
+      newsTimeline?.addEventListener('mouseleave',startAutoSlide);
 
       goToNewsSlide(0);
       startAutoSlide();
       window.addEventListener('resize',()=>goToNewsSlide(newsIndex));
-    }else if(newsPrev && newsNext){
-      newsPrev.disabled=true;
-      newsNext.disabled=true;
+    }else if(newsTimeline){
+      newsTimeline.innerHTML='';
+      newsTimeline.style.display='none';
     }
   </script>
 </body>
