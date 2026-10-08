@@ -58,6 +58,9 @@
     h2{font-family:Merriweather,Georgia,serif;font-size:1.55rem;margin:0 0 12px}
     .muted{color:var(--muted)}
     .list{display:grid;gap:14px}
+    .supervisions{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .supervisions .item h3{font-size:1rem;margin:0 0 6px}
+    .supervisions .item p{margin:0}
     .item{padding:14px;border:1px solid var(--border);border-radius:12px;background:color-mix(in oklab,var(--card) 92%,var(--bg))}
 
     /* ---------- Sidebar ---------- */
@@ -116,6 +119,7 @@
     #news .news-tag.seminar{background:#7651a8;color:#ffffff;border-color:#604189}
     #news .news-tag.activity{background:#1f8a3b;color:#ffffff;border-color:#196f30}
     #news .news-tag.award{background:#c07a10;color:#ffffff;border-color:#9c620b}
+    #news .news-tag.network{background:#0f766e;color:#ffffff;border-color:#0b5e58;white-space:nowrap}
     #news #newsList li:last-child{border-bottom:1px solid var(--border)}
     .justify{text-align:justify}
 
@@ -180,10 +184,10 @@
         <a href="#about">About</a>
         <!-- <a href="#news">News</a> -->
         <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
         <a href="#education">Education</a>
 
        <!-- <a href="#pubs">Publications</a> -->
-        <!-- <a href="#teaching">Teaching</a> -->
        <!-- <a href="projects.html">Foundation Projects</a> -->
         <!-- <a href="#talks">Talks</a> -->
         <!-- <a href="#beyond">Beyond research</a> -->
@@ -229,8 +233,8 @@
             <ul id="newsList">
               <li>
                 <div class="news-line">
-                  <span class="news-tag activity">Activity</span>
-                  <a href="">In London at Brunel University for the semi-annual MSCA ANT Doctoral Network Meeting presenting my research</a>
+                  <span class="news-tag network">Network</span>
+                  <a href="">Presented my PhD research at Brunel University for the semi-annual MSCA ANT Doctoral Network</a>
                   <time datetime="2026-03-23">October 2026 · London, UK</time>
                 </div>
               </li>
@@ -285,6 +289,13 @@
               </li>
               <li>
                 <div class="news-line">
+                  <span class="news-tag activity">Activity</span>
+                  <a href="https://www.janestreet.com/">Invited to Jane Street for a PhD Visit Day</a>
+                  <time datetime="2026-05">May 2026 · London, UK</time>
+                </div>
+              </li>
+              <li>
+                <div class="news-line">
                   <span class="news-tag seminar">Seminar</span>
                   <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_a-few-days-ago-i-had-the-pleasure-of-contributing-activity-7466508299677540354-zF2b?utm_medium=ios_app&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M&utm_source=social_share_send&utm_campaign=copy_link">Spoke at the seminar “Smart Hospitals: The Digital Revolution for a New Healthcare Paradigm in Calabria”</a>
                   <time>May 2026, University of Calabria, Italy</time>
@@ -293,7 +304,7 @@
               <li>
                 <div class="news-line">
                   <span class="news-tag conference">Conference</span>
-                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_our-recent-work-on-respiratory-audio-conversational-activity-7466099805774229504-WETu?utm_medium=ios_app&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M&utm_source=social_share_send&utm_campaign=copy_link">Presented our research on respiratory audio question-answering at the Oxbridge Women in Computer Science Conference in Oxford (9 May 2026), selected among the top 12.5% papers for an oral presentation</a>
+                  <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_our-recent-work-on-respiratory-audio-conversational-activity-7466099805774229504-WETu?utm_medium=ios_app&rcm=ACoAAC0iSYkBv739Pr22bxGLlPAE8XURnHEOs_M&utm_source=social_share_send&utm_campaign=copy_link">Presented our research on respiratory audio question-answering at the Oxbridge Women in Computer Science Conference in Oxford, selected among the top 12.5% papers for an oral presentation</a>
                   <time datetime="2026-05-09">May 2026 · Oxford, UK</time>
                 </div>
               </li>
@@ -313,7 +324,7 @@
               </li>
               <li>
                 <div class="news-line">
-                  <span class="news-tag activity">Activity</span>
+                  <span class="news-tag network">Network</span>
                   <a href="https://www.linkedin.com/in/gaia-assunta-bertolino/recent-activity/all/">In Antwerp at IMEC for the semi-annual MSCA ANT Doctoral Network Meeting presenting my research</a>
                   <time datetime="2026-03-23">March 2026 · Antwerp, Belgium</time>
                 </div>
@@ -363,7 +374,7 @@
               </li>
               <li>
                 <div class="news-line">
-                  <span class="news-tag activity">Activity</span>
+                  <span class="news-tag network">Network</span>
                   <a href="https://www.linkedin.com/posts/gaia-assunta-bertolino_healthcare-robotics-iot-activity-7391879372468719616-WXCg">Attended the MSCA ANT Doctoral Network Kickoff where I was elected student representative for 6 months</a>
                   <time datetime="2025-10-01">October 2025 · Delft, Netherlands</time>
                 </div>
@@ -435,17 +446,23 @@
             <!-- </div>
           </div>
         </section> -->
-<!-- 
         <section id="teaching" aria-labelledby="teach-h">
-          <h2 id="teach-h">Teaching</h2>
-          <div class="list">
+          <h2 id="teach-h">Supervisions — University of Cambridge Students</h2>
+          <div class="list supervisions">
+                        <div class="item">
+              <h3>Machine Learning &amp; Real World Data</h3>
+              <p class="muted">Lent Term (2026/27) · 2 students from Corpus Christi College</p>
+            </div>
+            <div class="item">
+              <h3>Object-Oriented Programming</h3>
+              <p class="muted">Michaelmas Term (2026/27) · 6 students from King's College</p>
+            </div>
             <div class="item">
               <h3>Machine Learning &amp; Real World Data</h3>
-              <p class="muted">Supervisor — <a href="https://www.cl.cam.ac.uk/teaching/2526/MLRD/">Syllabus</a></p>
-              <p class="muted" style="margin-top:4px;">Lent Term 2026</p>
+              <p class="muted">Lent Term (2026/27) · 8 students from Corpus Christi, Clare, Selwyn and Emmanuel Colleges · <a href="https://www.cl.cam.ac.uk/teaching/2526/MLRD/">Syllabus</a></p>
             </div>
           </div>
-        </section> -->
+        </section>
 
         <section id="education" aria-labelledby="edu-h">
           <h2 id="edu-h">Education</h2>
@@ -575,7 +592,7 @@
   </div>
 
   <div style="text-align:center;margin:32px 0;">
-    <p class="muted">© <span id="year"></span> Gaia A. Bertolino — Last update: July 2026</p>
+    <p class="muted">© <span id="year"></span> Gaia A. Bertolino — Last update: October 2026</p>
   </div>
 
   <script>
