@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generative Multimodal AI for Respiratory Diagnosis and Deep Learning for Construction Site Safety — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2025-07-19">19 July 2025</time><span class="talk-tag seminar">Invited talks</span></div>
+      <h1>Generative Multimodal AI for Respiratory Diagnosis and Deep Learning for Construction Site Safety</h1>
+      <p class="venue">Monte Terminillo, Italy</p>
+      <img class="hero photo" src="../assets/img/talks/inteligo-2025.jpg" alt="Gaia A. Bertolino speaking at the InteliGO podium next to a slide on object detection" />
+      <p>As a member of AIDIA — Associazione Italiana Donne Ingegneri e Architetti — I took part in InteliGO, an interdisciplinary training camp on the many implications of artificial intelligence across key sectors of society, held from 18 to 20 July 2025 on Monte Terminillo. The event brought together academia, professionals and institutions.</p>
+      <p>I gave two talks:</p>
+      <ul>
+        <li><strong>Generative multimodal analysis for the diagnosis of respiratory diseases</strong>, based on my master’s thesis work.</li>
+        <li><strong>Intelligent construction-site monitoring: deep learning and predictive analytics for safety</strong>, on applying deep learning, such as object detection, to improve safety on construction sites.</li>
+      </ul>
+      <!-- <p>Many thanks to AxO’ — Architetti all’Opera — and all the promoting organisations for making this opportunity for growth, exchange and inspiration possible.</p> -->
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://lnkd.in/p/ex8Wj9iA">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

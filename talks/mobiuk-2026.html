@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Respiratory Audio Question Answering for Health Assessment Under Real-World Heterogeneity — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026-06-25">25 June 2026</time><span class="talk-tag conference">Conference talk</span><span class="talk-tag conf-name">MobiUK 2026</span></div>
+      <h1>Respiratory Audio Question Answering for Health Assessment Under Real-World Heterogeneity</h1>
+      <p class="venue">MobiUK 2026 — UK Mobile, Wearable and Ubiquitous Systems Research Symposium, co-located with ACM MobiSys · Cambridge, UK</p>
+      <img class="hero photo" src="../assets/img/talks/mobiuk-2026.jpg" alt="Gaia A. Bertolino presenting" />
+      <p>How can heterogeneity in respiratory audio question answering be addressed without introducing computational overhead?</p>
+      <p>At MobiUK 2026, co-located this year with ACM MobiSys, I presented results from our work RAMoEA-QA: a progressive, representation-conditioned specialization framework that handles heterogeneity across devices, modalities and query types, while avoiding the cumulative computational cost of activating multiple expert models.</p>
+      <!-- <p>RAMoEA-QA preserves efficient single-path inference and achieves the best in-distribution and out-of-distribution performance, with accuracy gains of up to 23%.</p> -->
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://www.mobiuk.org/2026/abstracts/LT1_Respiratory_Audio_Question.pdf">Abstract PDF <span aria-hidden="true">↗</span></a><a class="btn" href="https://arxiv.org/abs/2603.06542">arXiv <span aria-hidden="true">↗</span></a><a class="btn" href="https://github.com/gab62-cam/RAMoEA-QA">Code <span aria-hidden="true">↗</span></a><a class="btn" href="https://lnkd.in/p/eExQPDQH">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Respiratory audio question answering for health assessment — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026-05-09">9 May 2026</time><span class="talk-tag conference">Oral presentation</span><span class="talk-tag conf-name">Oxbridge WiCS 2026</span></div>
+      <h1>Respiratory audio question answering for health assessment</h1>
+      <p class="venue">Oxbridge Women in Computer Science Conference · Oxford, UK</p>
+      <img class="hero photo" src="../assets/img/talks/oxbridge-wics-2026.jpg" alt="Gaia A. Bertolino in front of the title slide at the Oxbridge Women in Computer Science Conference, University of Oxford" />
+      <p>Our recent work on respiratory-audio conversational AI was selected among the top 12.5% of submissions for an oral presentation at the Oxbridge Women in Computer Science Conference, held on 9 May 2026 at the University of Oxford.</p>
+      <!-- <p>It was a wonderful opportunity to share our research with an inspiring community, and I really valued the feedback and the conversations with women working at the intersection of healthcare and machine learning.</p> -->
+      <!-- <p>Many thanks to my co-authors and supervisor for their contributions to this work.</p> -->
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://arxiv.org/abs/2602.18452">arXiv <span aria-hidden="true">↗</span></a><a class="btn" href="https://lnkd.in/p/epPpvK7h">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

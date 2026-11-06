@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benchmarking Heterogeneous Audio Biomarkers for Respiratory Health Question Answering — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026-06-29">29 June 2026</time><span class="talk-tag conference">Oral presentation</span><span class="talk-tag conf-name">IVBC 2026</span></div>
+      <h1>Benchmarking Heterogeneous Audio Biomarkers for Respiratory Health Question Answering</h1>
+      <p class="venue">International Vocal Biomarkers Conference (IVBC 2026), organised by eVoiceNet COST Action · Luxembourg</p>
+      <img class="hero banner" src="../assets/img/talks/ivbc-2026-presenters.jpg" alt="IVBC 2026 presenters in the session on Robust AI Methods, Generalisation & Signal Processing" />
+      <p>Our work on vocal and respiratory audio biomarkers for respiratory health question answering was selected for an oral presentation at the International Vocal Biomarkers Conference (IVBC 2026), held on 29–30 June 2026 in Luxembourg.</p>
+      <p>The conference was organised by eVoiceNet, the COST Action European Network for Vocal Biomarkers in Healthcare, of which I am a member. It brought together researchers, clinicians, AI specialists and speech scientists working to move voice-based biomarkers from research into responsible, real-world healthcare applications.</p>
+      <p>eVoiceNet collaborates with the North American Bridge2AI-Voice consortium through the International VOCAL Initiative, working towards shared definitions, greater standardisation and the clinically meaningful and ethical use of voice as a health biomarker.</p>
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://drive.google.com/file/d/12a_Wd96yvwHR_pGtq1-E4ip26UDkp8xV/view?usp=share_link">Abstract PDF <span aria-hidden="true">↗</span></a><a class="btn" href="https://evoicenet.eu/wp-content/uploads/2026/08/Book_of_Abstracts.pdf">Book of Abstracts <span aria-hidden="true">↗</span></a><a class="btn" href="https://www.cost.eu/cost-events/evoicenets-international-vocal-biomarkers-conference-and-training-school-2026/">Event <span aria-hidden="true">↗</span></a><a class="btn" href="https://lnkd.in/p/ewVEduCW">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

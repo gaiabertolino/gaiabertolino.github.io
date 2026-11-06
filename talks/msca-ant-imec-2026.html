@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Challenges in respiratory audio question answering — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026-03-23">23 March 2026</time><span class="talk-tag network">MSCA ANT Network meeting</span></div>
+      <h1>Challenges in respiratory audio question answering</h1>
+      <p class="venue">IMEC, Antwerp, Belgium</p>
+      <img class="hero photo" src="../assets/img/talks/msca-ant-imec-2026.jpg" alt="Gaia A. Bertolino presenting RA-QA at the MSCA ANT meeting in Antwerp" />
+      <p>At the second meeting of the Marie Skłodowska-Curie Doctoral Network ANT, held in Antwerp, I presented our two latest papers (both under submission at the time), including RA-QA, a benchmarking system for respiratory audio question answering under real-world heterogeneity.</p>
+      <!-- <p>Meeting again after our first gathering in October was a valuable opportunity to learn about the work of the other doctoral candidates, discuss our projects in person, exchange ideas and build connections for future collaborations.</p> -->
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://lnkd.in/p/emt8-EsF">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

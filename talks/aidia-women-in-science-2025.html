@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Women in STEM: Experiences in ICT — International Day of Women and Girls in Science — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2025-02-11">11 February 2025</time><span class="talk-tag activity">Interview</span></div>
+      <h1>Women in STEM: Experiences in ICT — International Day of Women and Girls in Science</h1>
+      <p class="venue">Online</p>
+      <img class="hero photo" src="../assets/img/talks/aidia-women-in-science-2025.jpg" alt="Video call of the four-voice AIDIA interview with Antonia Russo, Danila Ranieri, Giovanna Iannuzzi and Gaia A. Bertolino" />
+      <p>To mark the International Day of Women and Girls in Science, celebrated on 11 February for the past ten years, AIDIA invited me to take part in a four-voice interview on women in STEM.</p>
+      <p>The day is an opportunity to recognise the fundamental contribution of women to scientific and technological innovation, and to reflect on the importance of gender equality in STEM. In the interview, we shared our personal experiences in the ICT sector. Many thanks to AIDIA for choosing to celebrate the day in this way.</p>
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://youtu.be/QW6HkcqjzgA">Video <span aria-hidden="true">↗</span></a><a class="btn" href="https://aidia-italia.it/11-febbraio-donne-e-stem-aidia-per-un-futuro-di-innovazione-e-inclusione/">Article (AIDIA) <span aria-hidden="true">↗</span></a><a class="btn" href="https://lnkd.in/p/ev6C487a">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

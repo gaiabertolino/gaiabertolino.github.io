@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Hospitals: The Digital Revolution for a New Healthcare Paradigm in Calabria — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026-05">May 2026</time><span class="talk-tag seminar">Invited seminar</span></div>
+      <h1>Smart Hospitals: The Digital Revolution for a New Healthcare Paradigm in Calabria</h1>
+      <p class="venue">Online · University of Calabria, Italy</p>
+      <img class="hero photo" src="../assets/img/talks/smart-hospitals-calabria-2026.jpg" alt="Seminar panel at the University of Calabria, with Gaia A. Bertolino joining remotely on the screen" />
+      <p>I contributed remotely to the seminar “Smart Hospitals: The Digital Revolution for a New Healthcare Paradigm in Calabria” at the University of Calabria.</p>
+      <p>During the round table, we discussed the interaction between technological development, the private sector and local institutions, as well as the impact of professionals returning to the region — bringing back knowledge, experience and networks that can help build a smarter, more innovative ecosystem for Calabrian hospitals and healthcare.</p>
+      <!-- <p>The event was attended by distinguished guests including the Rector, Prof. Gianluigi Greco, and was promoted by several associations, among them Leonardo, an association I co-founded and served as president.</p> -->
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://lnkd.in/p/e5bmTg6V">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intelligent Construction-Site Monitoring: Deep Learning and Predictive Analytics for Safety — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2025-05">May 2025</time><span class="talk-tag seminar">Invited talk</span></div>
+      <h1>Intelligent Construction-Site Monitoring: Deep Learning and Predictive Analytics for Safety</h1>
+      <p class="venue">Calabria, Italy</p>
+      <img class="hero photo" src="../assets/img/talks/ai-edilizia-2025.jpg" alt="Gaia A. Bertolino with the speakers of the seminar on AI in construction" />
+      <p>At the seminar “Intelligenza Artificiale in Edilizia: Innovazione, Efficienza e Sostenibilità”, I spoke about intelligent construction-site monitoring, using deep learning and predictive analytics to improve safety.</p>
+      <!-- <p>It was inspiring to hear such a range of perspectives and to discover innovative work such as TOD System’s collaborative robots. Many thanks to the organisers and to everyone who took part for a rich and stimulating discussion.</p> -->
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://lnkd.in/p/eBCRVWwG">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

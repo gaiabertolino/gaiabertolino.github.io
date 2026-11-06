@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lead The Future Mentorship — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../talks/talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="../index.html#mentorship">Mentorship</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="../index.html#mentorship">← Mentorship</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026">2026</time><span class="talk-tag">Mentor</span></div>
+      <h1>Lead The Future Mentorship</h1>
+      <p class="venue">Lead The Future (LTF), Italy</p>
+      <p>Mentor for Lead The Future, an Italian non-profit founded in 2018 that runs a free one-to-one mentorship programme for STEM students, from bachelor&#x27;s to PhD level, with the vision of an Italy where every STEM student can aim for excellence.</p>
+      <!-- Add your experience, photos or notes here -->
+      <div class="links"><a class="btn" href="https://www.linkedin.com/company/leadthefuture">LinkedIn <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

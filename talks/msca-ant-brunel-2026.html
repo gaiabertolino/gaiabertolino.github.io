@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Towards Trustworthy Respiratory Audio Question Answering — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026-10-05">5–8 October 2026</time><span class="talk-tag network">MSCA ANT Network meeting</span></div>
+      <h1>Towards Trustworthy Respiratory Audio Question Answering</h1>
+      <p class="venue">Brunel University of London, UK</p>
+      <img class="hero photo" src="../assets/img/talks/msca-ant-brunel-2026.jpg" alt="Gaia A. Bertolino presenting" />
+      <p>At the third meeting of the Marie Skłodowska-Curie Doctoral Network ANT, hosted by Brunel University of London, I presented our latest results and future directions on respiratory audio question answering for health assessment, focusing on our findings on trustworthiness and the next steps towards more reliable models.</p>
+      <p>The meeting brought together doctoral researchers from across Europe working on embedded AI systems and applications, together with research contributions from STMicroelectronics.</p>
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://lnkd.in/p/ehB6z9UK">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

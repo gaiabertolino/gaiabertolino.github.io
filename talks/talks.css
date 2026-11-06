@@ -1,0 +1,90 @@
+/* Shared styles for the talk pages — same tokens as index.html */
+:root{
+  --bg-light:#ffffff;--text-light:#14151a;--muted-light:#616678;--card-light:#f7f8fa;--border-light:#e6e7ee;
+  --bg-dark:#0f1115;--text-dark:#e7e8ec;--muted-dark:#a6a9b4;--card-dark:#161922;--border-dark:#242838;
+  --link:#0b6fa4;--link-hover:#084f76;--radius:14px;--maxw:900px;--shadow:0 10px 24px rgba(0,0,0,.08)
+}
+[data-theme="light"]{--bg:var(--bg-light);--text:var(--text-light);--muted:var(--muted-light);--card:var(--card-light);--border:var(--border-light)}
+[data-theme="dark"]{--bg:var(--bg-dark);--text:var(--text-dark);--muted:var(--muted-dark);--card:var(--card-dark);--border:var(--border-dark)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial;font-size:16.5px;line-height:1.62;transition:background .3s,color .3s}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover);text-decoration:underline}
+img{max-width:100%;display:block}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab,var(--bg) 85%,transparent);border-bottom:1px solid var(--border)}
+.topbar .inner{max-width:var(--maxw);margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:600;color:var(--text)}
+.topnav{display:flex;gap:14px}
+.theme-toggle{border:none;background:transparent;font-size:1.3rem;cursor:pointer;color:var(--text)}
+
+main{max-width:var(--maxw);margin:0 auto;padding:96px 20px 40px}
+.back{display:inline-block;margin-bottom:14px;font-size:.95rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+h1{font-family:Merriweather,Georgia,serif;font-size:1.6rem;line-height:1.3;margin:6px 0 8px}
+.venue{color:var(--muted);margin:0 0 18px}
+.hero{width:100%;max-height:320px;object-fit:contain;background:#fff;border-radius:10px;border:1px solid var(--border);margin:0 0 18px}
+
+.talk-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:4px}
+time{font-variant-numeric:tabular-nums;font-size:.9rem;color:var(--muted)}
+.talk-tag{font-size:.74rem;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:6px;background:color-mix(in oklab,var(--link) 18%,transparent);color:var(--link)}
+
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 14px;border:1px solid var(--border);border-radius:8px;font-size:.88rem;font-weight:600}
+.btn:hover{border-color:var(--link);text-decoration:none}
+
+.talk-list{display:grid;gap:12px}
+.talk{display:grid;grid-template-columns:128px 1fr auto;gap:16px;align-items:center;padding:12px;border:1px solid var(--border);border-radius:12px;background:color-mix(in oklab,var(--card) 92%,var(--bg));color:var(--text);transition:border-color .2s,transform .2s}
+.talk:hover{border-color:var(--link);text-decoration:none;color:var(--text);transform:translateY(-1px)}
+.thumb{width:128px;height:84px;border-radius:8px;object-fit:cover;background:#fff;border:1px solid var(--border)}
+.thumb.placeholder{display:flex;align-items:center;justify-content:center;background:color-mix(in oklab,var(--link) 14%,var(--card));color:var(--link)}
+.thumb.placeholder svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.talk h3{font-size:1.04rem;line-height:1.4;margin:0 0 2px}
+.talk p{margin:0;color:var(--muted);font-size:.93rem}
+.row-arrow{color:var(--muted)}
+.talk:hover .row-arrow{color:var(--link)}
+
+@media(max-width:600px){
+  main{padding:84px 14px 30px}
+  .card{padding:18px}
+  h1{font-size:1.35rem}
+  .talk{grid-template-columns:1fr auto}
+  .thumb{display:none}
+}
+
+/* List format matching the main page (Publications / Talks) */
+.pub-list{list-style:none;margin:0;padding:0;display:grid}
+.pub{padding:16px 0;border-bottom:1px solid var(--border)}
+.pub:first-child{padding-top:4px}
+.pub:last-child{border-bottom:none;padding-bottom:0}
+.pub-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.pub-top time{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.pub-venue{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:6px}
+.pub-venue.talk-type{background:color-mix(in oklab,var(--link) 18%,transparent);color:var(--link)}
+.pub-title{font-family:Merriweather,Georgia,serif;font-size:1.05rem;line-height:1.4;margin:0 0 4px}
+.pub-authors{margin:0;color:var(--muted);font-size:.9rem}
+.edu-title{color:var(--text)}
+.edu-title:hover{color:var(--link)}
+.talk-row{display:grid;grid-template-columns:112px 1fr;gap:16px;align-items:center}
+.talk-thumb{width:112px;height:74px;border-radius:8px;background:#fff;border:1px solid var(--border)}
+img.talk-thumb{object-fit:contain;padding:4px}
+.talk-thumb.placeholder{display:flex;align-items:center;justify-content:center;background:color-mix(in oklab,var(--link) 14%,var(--card));color:var(--link)}
+.talk-thumb.placeholder svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:600px){
+  .talk-row{grid-template-columns:1fr}
+  .talk-thumb{display:none}
+}
+
+/* Photos (portrait or landscape) */
+.hero.photo{width:auto;max-width:100%;max-height:560px;margin:0 auto 18px;object-fit:contain;background:transparent}
+img.talk-thumb.photo{object-fit:cover;object-position:center 55%;padding:0}
+
+/* Full-width graphics (e.g. event banners) */
+.hero.banner{max-height:none;height:auto;object-fit:contain;background:transparent;border:none}
+
+/* Tag colours, matching the News tags */
+.pub-venue.talk-type.conference,.talk-tag.conference{background:#c07a10;color:#fff}
+.pub-venue.talk-type.seminar,.talk-tag.seminar{background:#7651a8;color:#fff}
+.pub-venue.talk-type.network,.talk-tag.network{background:#0f766e;color:#fff}
+.pub-venue.talk-type.activity,.talk-tag.activity{background:#1f8a3b;color:#fff}
+.pub-venue.conf-name,.talk-tag.conf-name{background:color-mix(in oklab,#c07a10 14%,transparent);color:#c07a10;box-shadow:inset 0 0 0 1px #c07a10}

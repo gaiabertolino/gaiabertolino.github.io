@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIM: PhD programme — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../talks/talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="../index.html#mentorship">Mentorship</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="../index.html#mentorship">← Mentorship</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026">2026</time><span class="talk-tag">Mentor</span></div>
+      <h1>AIM: PhD programme</h1>
+      <p class="venue">University of Cambridge</p>
+      <p>Mentor for AIM: PhD, a free widening-participation programme run by the University of Cambridge that supports prospective students in preparing their PhD applications to Cambridge.</p>
+      <p>The 2026 cycle runs from July 2026 to January 2027 through a structured six-month mentoring arrangement, for applicants planning to start their PhD in 2027-28.</p>
+      <!-- Add your experience, photos or notes here -->
+      <div class="links"><a class="btn" href="https://www.postgraduate.study.cam.ac.uk/aim-phd">Programme <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>

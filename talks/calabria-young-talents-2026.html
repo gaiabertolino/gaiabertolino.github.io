@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Healthcare AI research and startup innovation — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026-01-09">9 January 2026</time><span class="talk-tag seminar">Invited speaker</span></div>
+      <h1>Healthcare AI research and startup innovation</h1>
+      <p class="venue">“Council Hall, Simeri Crichi, Calabria, Italy</p>
+      <img class="hero photo" src="../assets/img/talks/calabria-young-talents-2026.jpg" alt="Speakers and organisers of Dalla Calabria al Mondo in the council hall of Simeri Crichi" />
+      <p>I spoke at “Dalla Calabria al Mondo”, an event celebrating young talents from Calabria, the region in southern Italy where I come from. 
+      <p>In my talk on research and artificial intelligence, I shared my path from the University of Calabria to the University of Cambridge, and what it means to do AI research in healthcare: bridging rigorous science with real clinical needs, and communicating these ideas to both expert and non-expert audiences. I also briefly introduced Visionary.AI, the startup we are building, and the impact we hope to create, starting from Calabria, through technology, research and collaboration with local stakeholders.</p>
+      <!-- <p>Speaking about this in the small village where I come from made the experience especially meaningful. Many thanks to AIDIA — Associazione Italiana Donne Ingegneri e Architetti — and to the Order of Engineers of the Province of Catanzaro and its Young Engineers Committee for the invitation, and for the opportunity to bring a computer science perspective into a multidisciplinary space where engineering, architecture and innovation meet.</p> -->
+      <!-- Add slides, photos, recordings or extra notes here -->
+      <div class="links"><a class="btn" href="https://lnkd.in/p/emVBsAye">LinkedIn post <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>
