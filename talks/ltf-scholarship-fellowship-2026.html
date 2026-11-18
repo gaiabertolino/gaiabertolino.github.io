@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scholarship & Fellowship — Gaia A. Bertolino</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/brain.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="talks.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="brand" href="../index.html">Gaia A. Bertolino</a>
+      <nav class="topnav"><a href="../index.html">Home</a><a href="index.html">Talks</a></nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+    </div>
+  </header>
+  <main>
+    <a class="back" href="index.html">← All talks</a>
+    <article class="card">
+      <div class="talk-top"><time datetime="2026-11-21">21 November 2026 · 15:00–16:15 CET</time><span class="talk-tag seminar">Webinar</span></div>
+      <h1>Scholarships &amp; Fellowships for PhD and Postdocs</h1>
+      <p class="venue">Online webinar · LTF (reserved for LTF members)</p>
+      <img class="hero" src="../assets/img/talks/ltf-scholarship-fellowship-2026.jpg" alt="Flyer of the LTF webinar Scholarship & Fellowship, 21 November, 15:00–16:15 CET" />
+      <p>I will be a speaker at “Scholarship & Fellowship”, an LTF webinar for Lead The Future members thinking about applying for a scholarship or a fellowship. The session is held in Italian.</p>
+      <p>Together with the other speakers, I will share practical information and concrete answers on how to navigate university applications and funding opportunities.</p>
+      <!-- <ul>
+        <li><strong>Timing and applications:</strong> how many applications to send, and with which deadlines.</li>
+        <li><strong>Key documents:</strong> how to write an effective academic CV and Statement of Purpose.</li>
+        <li><strong>Profile evaluation:</strong> how much the final degree mark, research experience and extracurricular activities really count.</li>
+        <li><strong>Recommendation letters:</strong> how they work in international systems, and whom to ask.</li>
+        <li><strong>Selection and beyond:</strong> what to expect from interviews, and the real prospects for funding and careers.</li>
+      </ul> -->
+      <!-- <p>The webinar is aimed at Bachelor’s and Master’s students interested in scholarships and fellowships for a PhD, and at PhD students looking at postdoctoral fellowships.</p> -->
+      <!-- <p><strong>Speakers:</strong> Irene Pellini (PhD student at the Max Planck School Matter to Life and the University of Göttingen; Max Planck School Matter to Life scholarship recipient), myself (PhD in Computer Science at the University of Cambridge; Marie Skłodowska-Curie Actions fellow), and a further speaker to be announced.</p> -->
+      <div class="links"><a class="btn" href="https://luma.com/6s5ppaon">Event page <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </main>
+  <script>
+    const root=document.documentElement,btn=document.getElementById('themeToggle');
+    let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+    if(saved){root.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'☾':'☼';}
+    btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);btn.textContent=n==='dark'?'☾':'☼';try{localStorage.setItem('theme',n)}catch(e){}});
+  </script>
+</body>
+</html>
